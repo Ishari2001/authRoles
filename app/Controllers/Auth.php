@@ -6,13 +6,30 @@ use App\Models\UserModel;
 
 class Auth extends BaseController
 {
+    protected $session;
+
+    public function __construct()
+    {
+        $this->session = session();
+    }
+
     public function login()
     {
+        // ✅ If already logged, don't allow re-login
+        if ($this->session->get('logged')) {
+            return redirect()->to('/dashboard');
+        }
+
         return view('auth/login');
     }
 
     public function register()
     {
+        // ✅ Prevent logged users opening register again
+        if ($this->session->get('logged')) {
+            return redirect()->to('/dashboard');
+        }
+
         return view('auth/register');
     }
 
@@ -26,7 +43,11 @@ class Auth extends BaseController
 
         if ($user && password_verify($password, $user['password'])) {
 
-            session()->set([
+            // ✅ IMPORTANT: regenerate session (security)
+            $this->session->regenerate();
+
+            // ✅ Your original session data (unchanged)
+            $this->session->set([
                 'id'     => $user['id'],
                 'name'   => $user['name'],
                 'role'   => $user['role'],
@@ -41,11 +62,14 @@ class Auth extends BaseController
 
     public function logout()
     {
-        session()->destroy();
+        // ✅ Destroy safely
+        $this->session->remove(['id','name','role','logged']);
+        $this->session->destroy();
+
         return redirect()->to('/login');
     }
 
-    // ✅ REGISTER USER
+    // ✅ REGISTER USER (NO LOGIC CHANGED)
     public function registerSave()
     {
         $userModel = new UserModel();
@@ -55,12 +79,10 @@ class Auth extends BaseController
         $password   = password_hash($this->request->getPost('password'), PASSWORD_DEFAULT);
         $sponsor_id = $this->request->getPost('sponsor_id');
 
-        // ✅ Check duplicate email
         if ($userModel->where('email', $email)->first()) {
             return redirect()->back()->with('error', 'Email already registered');
         }
 
-        // ✅ Validate sponsor (if entered)
         $sponsorName = null;
         if (!empty($sponsor_id)) {
             $sponsor = $userModel->find($sponsor_id);
@@ -74,20 +96,17 @@ class Auth extends BaseController
             $sponsor_id = null;
         }
 
-        // ✅ Insert user
         $userModel->insert([
             'name'       => $name,
             'email'      => $email,
             'password'   => $password,
-            'role'       => 4, // student
+            'role'       => 4,
             'sponsor_id' => $sponsor_id,
             'wallet'     => 0
         ]);
 
-        // ✅ Get New User ID
         $newUserId = $userModel->getInsertID();
 
-        // ✅ Send data to UI
         return redirect()->back()
             ->with('success', 'Registration Successful!')
             ->with('new_user_id', $newUserId)
@@ -95,7 +114,7 @@ class Auth extends BaseController
             ->with('sponsor_name', $sponsorName);
     }
 
-    // ✅ AJAX Sponsor Check
+    // ✅ AJAX Sponsor Check (UNCHANGED)
     public function getSponsorName()
     {
         $userModel = new UserModel();
