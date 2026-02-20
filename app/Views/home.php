@@ -63,8 +63,8 @@ body{ background:#0f172a; color:#f1f5f9; }
 <div class="navbar">
     <h1>E-Ticket Platform</h1>
     <div>
-        <a href="<?= base_url('/dashboard') ?>">Dashboard</a>
-        <a href="<?= base_url('/purchase') ?>">Purchase Ticket</a>
+        <a href="<?= base_url('/dashboard') ?>">Purchase Ticket</a>
+        
         <a href="<?= base_url('/logout') ?>">Logout</a>
     </div>
 </div>

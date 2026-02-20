@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Models\UserModel;
 use App\Models\CommissionModel;
+use App\Models\TicketModel;
 
 class Dashboard extends BaseController
 {
@@ -32,85 +33,101 @@ public function purchaseTicket()
         return redirect()->to('/login');
     }
 
-    $userModel = new UserModel();
+    $userModel       = new UserModel();
+    $ticketModel     = new TicketModel();
     $commissionModel = new CommissionModel();
 
-    $userId = session()->get('id');
+    $userId   = session()->get('id');
+    $ticketId = $this->request->getPost('ticket_id');
+
     $user   = $userModel->find($userId);
+    $ticket = $ticketModel->find($ticketId);
 
-    $amount = (float)$this->request->getPost('amount');
-
-    if (!$amount || $amount <= 0) {
-        return redirect()->back()->with('error', 'Enter a valid ticket amount.');
+    // -----------------------------
+    // VALIDATE TICKET
+    // -----------------------------
+    if (!$ticket) {
+        return redirect()->back()->with('error', 'Ticket not found.');
     }
+
+    $now = date('Y-m-d H:i:s');
+
+    // Check selling window
+    if ($now < $ticket['purchase_start'] || $now > $ticket['purchase_end']) {
+        return redirect()->back()->with('error', 'Ticket sales are closed.');
+    }
+
+    // Check quantity
+    if ($ticket['qty'] <= 0) {
+        return redirect()->back()->with('error', 'Ticket Sold Out.');
+    }
+
+    // Ticket price (NOT manual input anymore)
+    $amount = (float)$ticket['price'];
 
     /*
-    ----------------------------------------------------
-    CHECK: Did this user register under a sponsor?
-    ----------------------------------------------------
+    -----------------------------------
+    MLM LOGIC
+    -----------------------------------
     */
 
-    if (empty($user['sponsor_id'])) {
+    $commissionAmount = 0;
+    $userShare        = $amount;
 
-        // ❌ NO SPONSOR → User keeps 100%
-        $userModel->update($userId, [
-            'wallet' => $user['wallet'] + $amount
-        ]);
+    if (!empty($user['sponsor_id'])) {
 
-        return redirect()->back()->with(
-            'success',
-            "Ticket Purchased! No sponsor found — Full $$amount added to your wallet."
-        );
+        $sponsor = $userModel->find($user['sponsor_id']);
+
+        if ($sponsor) {
+            // 10% sponsor commission
+            $commissionAmount = $amount * 0.10;
+            $userShare        = $amount - $commissionAmount;
+
+            // Add commission to sponsor wallet
+            $userModel->update($sponsor['id'], [
+                'wallet' => $sponsor['wallet'] + $commissionAmount
+            ]);
+
+            // Log commission
+            $commissionModel->insert([
+                'sponsor_id'   => $sponsor['id'],
+                'from_user_id' => $userId,
+                'amount'       => $commissionAmount,
+                'ticket_id'    => $ticketId
+            ]);
+        }
     }
 
-    /*
-    ----------------------------------------------------
-    USER HAS SPONSOR → Apply MLM Distribution
-    ----------------------------------------------------
-    */
-
-    $sponsor = $userModel->find($user['sponsor_id']);
-
-    // Safety check (in case sponsor was deleted)
-    if (!$sponsor) {
-
-        // Treat like no sponsor
-        $userModel->update($userId, [
-            'wallet' => $user['wallet'] + $amount
-        ]);
-
-        return redirect()->back()->with(
-            'success',
-            "Sponsor not found — Full $$amount added to your wallet."
-        );
-    }
-
-    // Commission calculation
-    $commissionAmount = $amount * 0.10; // 10% to sponsor
-    $userShare        = $amount - $commissionAmount; // 90% to user
-
-    // Add to student
+    // Add remaining to buyer wallet
     $userModel->update($userId, [
         'wallet' => $user['wallet'] + $userShare
     ]);
 
-    // Add to sponsor
-    $userModel->update($user['sponsor_id'], [
-        'wallet' => $sponsor['wallet'] + $commissionAmount
+    // -----------------------------
+    // REDUCE STOCK
+    // -----------------------------
+    $ticketModel->update($ticketId, [
+        'qty' => $ticket['qty'] - 1
     ]);
 
-    // Log commission
-    $commissionModel->insert([
-        'sponsor_id'   => $user['sponsor_id'],
-        'from_user_id' => $userId,
-        'amount'       => $commissionAmount
+    // -----------------------------
+    // SAVE PURCHASE HISTORY
+    // -----------------------------
+    $db = \Config\Database::connect();
+    $db->table('purchases')->insert([
+        'user_id'   => $userId,
+        'ticket_id' => $ticketId,
+        'price'     => $amount,
+        'created_at'=> date('Y-m-d H:i:s')
     ]);
 
     return redirect()->back()->with(
         'success',
-        "Ticket Purchased! You received $$userShare and your sponsor earned $$commissionAmount."
+        "Ticket Purchased Successfully! You received $$userShare" .
+        ($commissionAmount ? " | Sponsor earned $$commissionAmount" : "")
     );
 }
+
 
 
 

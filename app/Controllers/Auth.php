@@ -54,7 +54,7 @@ class Auth extends BaseController
                 'logged' => true
             ]);
 
-            return redirect()->to('/dashboard');
+            return redirect()->to('/home');
         }
 
         return redirect()->back()->with('error', 'Invalid Login');
