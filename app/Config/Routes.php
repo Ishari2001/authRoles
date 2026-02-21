@@ -35,3 +35,7 @@ $routes->get('/admin/dashboard', 'Admin::dashboard');
 $routes->get('/admin/tickets', 'Admin::tickets');
 $routes->get('/admin/tickets/add', 'Admin::addTicket');
 $routes->post('/admin/tickets/save', 'Admin::saveTicket');
+
+$routes->post('/admin/ticket/get', 'Admin::getTicket');
+$routes->post('/admin/ticket/update', 'Admin::updateTicketAjax');
+$routes->post('/admin/ticket/delete', 'Admin::deleteTicketAjax');

@@ -181,51 +181,58 @@ img{border-radius:6px;width:80px;}
    
 
     <table>
-        <tr>
-            <th>ID</th>
-            <th>Image</th>
-            <th>Title</th>
-            <th>Price</th>
-            <th>Qty </th>
-            <th>Event Date</th>
-            <th>Sales Start</th>
-            <th>Sales End</th>
-            <th>Actions</th>
-        </tr>
+    <tr>
+        <th>ID</th>
+        <th>Image</th>
+        <th>Title</th>
+        <th>Price</th>
+        <th>Qty</th>
+        <th>Event Date</th>
+        <th>Sales Start</th>
+        <th>Sales End</th>
+        <th>Actions</th>
+    </tr>
+
+    <?php if(!empty($tickets)): ?>
         <?php foreach($tickets as $t): ?>
         <tr>
             <td><?= $t['id'] ?></td>
+
             <td>
-                <?php if($t['image']): ?>
-                    <img src="<?= base_url('uploads/tickets/'.$t['image']) ?>" alt="ticket">
+                <?php if(!empty($t['image'])): ?>
+                    <img src="<?= base_url('uploads/tickets/'.$t['image']) ?>" width="60">
                 <?php else: ?>
                     No Image
                 <?php endif; ?>
             </td>
+
             <td><?= esc($t['title']) ?></td>
             <td>Rs. <?= number_format($t['price'],2) ?></td>
             <td><?= $t['qty'] ?></td>
             <td><?= $t['event_date'] ?></td>
             <td><?= $t['purchase_start'] ?></td>
             <td><?= $t['purchase_end'] ?></td>
-          <td>
-    <!-- Edit Form -->
-    <form method="post" enctype="multipart/form-data" style="display:inline;">
-        <input type="hidden" name="action" value="edit">
-        <input type="hidden" name="id" value="<?= $t['id'] ?>">
-        <button type="submit" class="btn btn-edit">Edit</button>
-    </form>
 
-    <!-- Delete Form -->
-    <form method="post" style="display:inline;" onsubmit="return confirm('Are you sure you want to delete this ticket?');">
-        <input type="hidden" name="action" value="delete">
-        <input type="hidden" name="id" value="<?= $t['id'] ?>">
-        <button type="submit" class="btn btn-danger">Delete</button>
-    </form>
-</td>
+            <!-- ✅ ACTION BUTTONS -->
+            <td>
+                <button class="btn btn-sm btn-primary"
+                        onclick="editTicket(<?= $t['id'] ?>)">
+                    Edit
+                </button>
+
+                <button class="btn btn-sm btn-danger"
+                        onclick="deleteTicket(<?= $t['id'] ?>)">
+                    Delete
+                </button>
+            </td>
         </tr>
         <?php endforeach; ?>
-    </table>
+    <?php else: ?>
+        <tr>
+            <td colspan="9" style="text-align:center;">No Tickets Found</td>
+        </tr>
+    <?php endif; ?>
+</table>
 
     <!-- ADD NEW TICKET FORM -->
     <div style="margin-top:40px; padding:20px; background:#1e293b; border-radius:12px;">
@@ -265,5 +272,93 @@ img{border-radius:6px;width:80px;}
     </div>
 
 </div>
+
+<div id="ticketModal" style="display:none; position:fixed; inset:0; background:#00000090;">
+  <div style="background:#1e293b; width:500px; margin:80px auto; padding:25px; border-radius:10px;">
+    <h3>Edit Ticket</h3>
+
+    <form id="editForm">
+        <input type="hidden" name="id" id="ticket_id">
+
+        <label>Title</label>
+        <input type="text" name="title" id="title"><br><br>
+
+        <label>Description</label>
+        <textarea name="description" id="description"></textarea><br><br>
+
+        <label>Price</label>
+        <input type="number" name="price" id="price"><br><br>
+
+        <label>Qty</label>
+        <input type="number" name="qty" id="qty"><br><br>
+
+        <label>Event Date</label>
+        <input type="date" name="event_date" id="event_date"><br><br>
+
+        <label>Sales Start</label>
+        <input type="datetime-local" name="purchase_start" id="purchase_start"><br><br>
+
+        <label>Sales End</label>
+        <input type="datetime-local" name="purchase_end" id="purchase_end"><br><br>
+
+        <label>Change Image</label>
+        <input type="file" name="image"><br><br>
+
+        <button type="submit" class="btn btn-primary">Update</button>
+        <button type="button" onclick="closeModal()">Cancel</button>
+    </form>
+  </div>
+</div>
+<script>
+function editTicket(id){
+    fetch("<?= base_url('/admin/ticket/get') ?>",{
+        method:"POST",
+        headers:{'Content-Type':'application/x-www-form-urlencoded'},
+        body:"id="+id
+    })
+    .then(res=>res.json())
+    .then(data=>{
+        document.getElementById('ticket_id').value = data.id;
+        document.getElementById('title').value = data.title;
+        document.getElementById('description').value = data.description;
+        document.getElementById('price').value = data.price;
+        document.getElementById('qty').value = data.qty;
+        document.getElementById('event_date').value = data.event_date;
+        document.getElementById('purchase_start').value = data.purchase_start.replace(' ','T');
+        document.getElementById('purchase_end').value = data.purchase_end.replace(' ','T');
+
+        document.getElementById('ticketModal').style.display='block';
+    });
+}
+
+function closeModal(){
+    document.getElementById('ticketModal').style.display='none';
+}
+
+document.getElementById('editForm').onsubmit = function(e){
+    e.preventDefault();
+
+    let formData = new FormData(this);
+
+    fetch("<?= base_url('/admin/ticket/update') ?>",{
+        method:"POST",
+        body:formData
+    }).then(()=>{
+        location.reload();
+    });
+}
+
+function deleteTicket(id){
+    if(!confirm("Delete Ticket?")) return;
+
+    fetch("<?= base_url('/admin/ticket/delete') ?>",{
+        method:"POST",
+        headers:{'Content-Type':'application/x-www-form-urlencoded'},
+        body:"id="+id
+    }).then(()=>{
+        location.reload();
+    });
+}
+</script>
 </body>
 </html>

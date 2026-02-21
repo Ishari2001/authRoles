@@ -158,17 +158,7 @@ public function dashboard()
     return view('admin/dashboard', $data);
 }
 
-public function tickets()
-{
-    if (!session()->get('isAdmin')) {
-        return redirect()->to('/admin/login');
-    }
 
-    $ticketModel = new TicketModel();
-    $data['tickets'] = $ticketModel->orderBy('id','DESC')->findAll();
-
-    return view('admin/tickets', $data);
-}
 
 public function addTicket()
 {
@@ -229,4 +219,53 @@ public function saveTicket()
 
     return redirect()->to('/admin/tickets')->with('success','Ticket Added Successfully');
 }
+
+
+public function getTicket()
+{
+    $id = $this->request->getPost('id');
+    $ticketModel = new TicketModel();
+
+    return $this->response->setJSON($ticketModel->find($id));
+}
+
+public function updateTicketAjax()
+{
+    $ticketModel = new TicketModel();
+
+    $id = $this->request->getPost('id');
+
+    $data = [
+        'title'          => $this->request->getPost('title'),
+        'description'    => $this->request->getPost('description'),
+        'price'          => $this->request->getPost('price'),
+        'qty'            => $this->request->getPost('qty'),
+        'event_date'     => $this->request->getPost('event_date'),
+        'purchase_start' => $this->request->getPost('purchase_start'),
+        'purchase_end'   => $this->request->getPost('purchase_end'),
+    ];
+
+    // Image optional
+    $file = $this->request->getFile('image');
+    if ($file && $file->isValid()) {
+        $name = $file->getRandomName();
+        $file->move(ROOTPATH . 'public/uploads/tickets/', $name);
+        $data['image'] = $name;
+    }
+
+    $ticketModel->update($id, $data);
+
+    return $this->response->setJSON(['status' => 'success']);
+}
+
+public function deleteTicketAjax()
+{
+    $id = $this->request->getPost('id');
+    $ticketModel = new TicketModel();
+    $ticketModel->delete($id);
+
+    return $this->response->setJSON(['status' => 'deleted']);
+}
+
+
 }
