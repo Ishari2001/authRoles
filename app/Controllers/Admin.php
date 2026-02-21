@@ -267,5 +267,15 @@ public function deleteTicketAjax()
     return $this->response->setJSON(['status' => 'deleted']);
 }
 
+public function tickets()
+{
+    if (!session()->get('isAdmin')) {
+        return redirect()->to('/admin/login');
+    }
 
+    $ticketModel = new TicketModel();
+    $data['tickets'] = $ticketModel->orderBy('id','DESC')->findAll();
+
+    return view('admin/tickets', $data);
+}
 }

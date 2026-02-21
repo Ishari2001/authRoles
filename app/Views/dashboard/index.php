@@ -85,23 +85,40 @@ body{
 
   
   <?php if($role == 4 || $role == 1): ?>
-    <div class="card">
-        <h3>Purchase E-Ticket</h3>
+<div class="card">
+    <h3>Purchase E-Ticket</h3>
 
-        <?php if(session()->getFlashdata('success')): ?>
-            <p class="success"><?= session()->getFlashdata('success') ?></p>
-        <?php endif; ?>
-        <?php if(session()->getFlashdata('error')): ?>
-            <p class="error"><?= session()->getFlashdata('error') ?></p>
-        <?php endif; ?>
-
-        <form method="post" action="<?= base_url('dashboard/purchaseTicket') ?>">
-            <input type="number" name="amount" placeholder="Ticket Amount" required>
-            <button type="submit">Buy Ticket</button>
-        </form>
-    </div>
+    <?php if(session()->getFlashdata('success')): ?>
+        <p class="success"><?= session()->getFlashdata('success') ?></p>
+    <?php endif; ?>
+    <?php if(session()->getFlashdata('error')): ?>
+        <p class="error"><?= session()->getFlashdata('error') ?></p>
     <?php endif; ?>
 
+    <?php if(!empty($tickets)): ?>
+        <?php foreach($tickets as $t): ?>
+            <div style="border:1px solid #ccc; padding:10px; margin-bottom:10px; border-radius:6px;">
+                <?php if($t['image']): ?>
+                    <img src="<?= base_url('uploads/tickets/'.$t['image']) ?>" alt="<?= esc($t['title']) ?>" style="width:100px; float:left; margin-right:10px;">
+                <?php endif; ?>
+                <strong><?= esc($t['title']) ?></strong><br>
+                Price: Rs. <?= number_format($t['price'],2) ?><br>
+                Available: <?= $t['qty'] ?><br>
+                Event: <?= $t['event_date'] ?><br>
+                <form method="post" action="<?= base_url('dashboard/purchaseTicket') ?>" style="margin-top:5px;">
+                    <input type="hidden" name="ticket_id" value="<?= $t['id'] ?>">
+                    <button type="submit" style="padding:6px 12px; background:#1e3c72; color:#fff; border:none; border-radius:4px; cursor:pointer;">
+                        Purchase Ticket
+                    </button>
+                </form>
+                <div style="clear:both;"></div>
+            </div>
+        <?php endforeach; ?>
+    <?php else: ?>
+        <p>No tickets available for purchase.</p>
+    <?php endif; ?>
+</div>
+<?php endif; ?>
 </div>
 
 </body>

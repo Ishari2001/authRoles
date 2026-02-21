@@ -92,6 +92,8 @@ img{border-radius:6px;width:80px;}
 .btn-edit:hover{background:#d97706;}
 .btn-danger{background:#ef4444;color:#fff;}
 .btn-danger:hover{background:#dc2626;}
+
+
 </style>
 </head>
 <body>
