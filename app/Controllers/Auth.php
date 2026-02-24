@@ -15,7 +15,7 @@ class Auth extends BaseController
 
     public function login()
     {
-        // ✅ If already logged, don't allow re-login
+        
         if ($this->session->get('logged')) {
             return redirect()->to('/dashboard');
         }
@@ -23,15 +23,23 @@ class Auth extends BaseController
         return view('auth/login');
     }
 
-    public function register()
-    {
-        // ✅ Prevent logged users opening register again
-        if ($this->session->get('logged')) {
-            return redirect()->to('/dashboard');
-        }
+ public function register()
+{
+    $ref = $this->request->getGet('ref');
 
-        return view('auth/register');
+    if ($ref && is_numeric($ref)) {
+
+        // Check if ref user exists
+        $userModel = new UserModel();
+        $refUser   = $userModel->find($ref);
+
+        if ($refUser) {
+            session()->set('referral_id', $ref);
+        }
     }
+
+    return view('auth/register');
+}
 
     public function doLogin()
     {
@@ -71,48 +79,41 @@ class Auth extends BaseController
 
     // ✅ REGISTER USER (NO LOGIC CHANGED)
     public function registerSave()
-    {
-        $userModel = new UserModel();
+{
+    $userModel = new UserModel();
 
-        $name       = $this->request->getPost('name');
-        $email      = $this->request->getPost('email');
-        $password   = password_hash($this->request->getPost('password'), PASSWORD_DEFAULT);
-        $sponsor_id = $this->request->getPost('sponsor_id');
+    $name     = $this->request->getPost('name');
+    $email    = $this->request->getPost('email');
+    $password = password_hash($this->request->getPost('password'), PASSWORD_DEFAULT);
 
-        if ($userModel->where('email', $email)->first()) {
-            return redirect()->back()->with('error', 'Email already registered');
-        }
-
-        $sponsorName = null;
-        if (!empty($sponsor_id)) {
-            $sponsor = $userModel->find($sponsor_id);
-
-            if (!$sponsor) {
-                return redirect()->back()->with('error', 'Invalid Sponsor ID');
-            }
-
-            $sponsorName = $sponsor['name'];
-        } else {
-            $sponsor_id = null;
-        }
-
-        $userModel->insert([
-            'name'       => $name,
-            'email'      => $email,
-            'password'   => $password,
-            'role'       => 4,
-            'sponsor_id' => $sponsor_id,
-            'wallet'     => 0
-        ]);
-
-        $newUserId = $userModel->getInsertID();
-
-        return redirect()->back()
-            ->with('success', 'Registration Successful!')
-            ->with('new_user_id', $newUserId)
-            ->with('sponsor_id', $sponsor_id)
-            ->with('sponsor_name', $sponsorName);
+    if ($userModel->where('email', $email)->first()) {
+        return redirect()->back()->with('error', 'Email already registered');
     }
+
+    // ✅ Get sponsor from session (URL ref)
+    $sponsor_id = session()->get('referral_id');
+
+    if ($sponsor_id && !$userModel->find($sponsor_id)) {
+        $sponsor_id = null;
+    }
+
+    $userModel->insert([
+        'name'       => $name,
+        'email'      => $email,
+        'password'   => $password,
+        'role'       => 4,
+        'sponsor_id' => $sponsor_id,
+        'wallet'     => 0
+    ]);
+
+    $newUserId = $userModel->getInsertID();
+
+    // clear referral so it won't reuse accidentally
+    session()->remove('referral_id');
+
+    return redirect()->to('/login')
+        ->with('success', 'Registration Successful!');
+}
 
     // ✅ AJAX Sponsor Check (UNCHANGED)
     public function getSponsorName()

@@ -142,9 +142,9 @@ function checkSponsor(id){
 <input type="text" name="name" placeholder="Full Name" required>
 <input type="email" name="email" placeholder="Email" required>
 <input type="password" name="password" placeholder="Password" required>
-<input type="number" name="sponsor_id" placeholder="Sponsor User ID (Optional)" oninput="checkSponsor(this.value)">
+<!-- <input type="number" name="sponsor_id" placeholder="Sponsor User ID (Optional)" oninput="checkSponsor(this.value)">
 <small>Enter a registered user ID to assign as your sponsor</small>
-<span id="sponsor_name"></span>
+<span id="sponsor_name"></span> -->
 
 <button type="submit">Register</button>
 <div class="login-link">

@@ -87,6 +87,7 @@ body{
   <?php if($role == 4 || $role == 1): ?>
 <div class="card">
     <h3>Purchase E-Ticket</h3>
+    
 
     <?php if(session()->getFlashdata('success')): ?>
         <p class="success"><?= session()->getFlashdata('success') ?></p>

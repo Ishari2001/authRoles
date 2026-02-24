@@ -27,7 +27,7 @@ class Dashboard extends BaseController
         ];
 
         return view('dashboard/index', $data);
-    }
+    } 
 
     public function purchaseTicket()
     {
@@ -112,4 +112,19 @@ class Dashboard extends BaseController
             ($commissionAmount ? " | Sponsor earned Rs. $commissionAmount" : "")
         );
     }
+
+    public function home()
+{
+    if (!session()->get('logged')) {
+        return redirect()->to('/login');
+    }
+
+    $userId = session()->get('id');
+
+    $data['refLink'] = base_url('register?ref=' . $userId);
+
+    
+
+    return view('home', $data);
+}
 }

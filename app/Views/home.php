@@ -62,6 +62,16 @@ body{ background:#0f172a; color:#f1f5f9; }
 <!-- NAVBAR -->
 <div class="navbar">
     <h1>E-Ticket Platform</h1>
+    <div class="ref-box">
+    <h3>Your Referral Link</h3>
+
+    <input type="text" value="<?= $refLink ?>" id="refLink" readonly>
+
+    <button onclick="copyLink()">Copy Link</button>
+</div>
+
+
+    
     <div>
         <a href="<?= base_url('/dashboard') ?>">Purchase Ticket</a>
         
@@ -115,6 +125,14 @@ body{ background:#0f172a; color:#f1f5f9; }
 <div class="footer">
 © <?= date('Y') ?> E-Ticket Platform — Modern & Secure
 </div>
-
+<script>
+function copyLink(){
+    var copyText = document.getElementById("refLink");
+    copyText.select();
+    copyText.setSelectionRange(0, 99999);
+    navigator.clipboard.writeText(copyText.value);
+    alert("Referral Link Copied!");
+}
+</script>
 </body>
 </html>
