@@ -30,88 +30,172 @@ class Dashboard extends BaseController
     } 
 
     public function purchaseTicket()
-    {
-        if (!session()->get('logged')) {
-            return redirect()->to('/login');
-        }
+{
+    if (!session()->get('logged')) {
+        return redirect()->to('/login');
+    }
 
-        $userModel       = new UserModel();
-        $ticketModel     = new TicketModel();
-        $commissionModel = new CommissionModel();
+    $userModel       = new UserModel();
+    $ticketModel     = new TicketModel();
+    $commissionModel = new CommissionModel();
+    $db              = \Config\Database::connect();
 
-        $userId   = session()->get('id');
-        $ticketId = $this->request->getPost('ticket_id');
+    $userId   = session()->get('id');
+    $ticketId = (int)$this->request->getPost('ticket_id');
 
-        $user   = $userModel->find($userId);
-        $ticket = $ticketModel->find($ticketId);
+    // -----------------------------
+    // VALIDATION
+    // -----------------------------
+    if (!$ticketId) {
+        return redirect()->back()->with('error', 'Invalid Ticket.');
+    }
 
-        if (!$ticket) {
-            return redirect()->back()->with('error', 'Ticket not found.');
-        }
+    $user = $userModel->find($userId);
 
-        $now = date('Y-m-d H:i:s');
-        if ($now < $ticket['purchase_start'] || $now > $ticket['purchase_end']) {
-            return redirect()->back()->with('error', 'Ticket sales are closed.');
-        }
+    // User deleted while logged in
+    if (!$user) {
+        session()->destroy();
+        return redirect()->to('/login')->with('error', 'User no longer exists.');
+    }
 
-        if ($ticket['qty'] <= 0) {
-            return redirect()->back()->with('error', 'Ticket Sold Out.');
-        }
+    $ticket = $ticketModel->find($ticketId);
 
-        $amount = (float)$ticket['price'];
+    if (!$ticket) {
+        return redirect()->back()->with('error', 'Ticket not found.');
+    }
 
-        // -----------------------------
-        // MLM LOGIC
-        // -----------------------------
-        $commissionAmount = 0;
-        $userShare        = $amount;
+    $now = date('Y-m-d H:i:s');
 
-        if (!empty($user['sponsor_id'])) {
-            $sponsor = $userModel->find($user['sponsor_id']);
-            if ($sponsor) {
-                $commissionAmount = $amount * 0.10;
-                $userShare        = $amount - $commissionAmount;
+    if ($now < $ticket['purchase_start'] || $now > $ticket['purchase_end']) {
+        return redirect()->back()->with('error', 'Ticket sales are closed.');
+    }
 
-                // Add commission to sponsor wallet
-                $userModel->update($sponsor['id'], [
-                    'wallet' => $sponsor['wallet'] + $commissionAmount
-                ]);
+    if ($ticket['qty'] <= 0) {
+        return redirect()->back()->with('error', 'Ticket Sold Out.');
+    }
 
-                // Log commission
-                $commissionModel->insert([
-                    'sponsor_id'   => $sponsor['id'],
-                    'from_user_id' => $userId,
-                    'amount'       => $commissionAmount,
-                    'ticket_id'    => $ticketId
-                ]);
+    $amount = (float)$ticket['price'];
+
+    // -----------------------------
+    // START TRANSACTION (IMPORTANT)
+    // -----------------------------
+    $db->transStart();
+
+    // Lock ticket row (avoid double purchase)
+    $ticket = $db->table('tickets')
+        ->where('id', $ticketId)
+        ->get()
+        ->getRowArray();
+
+    if ($ticket['qty'] <= 0) {
+        $db->transRollback();
+        return redirect()->back()->with('error', 'Ticket Sold Out.');
+    }
+
+    // -----------------------------
+    // MLM COMMISSION (LEVEL 1 + 2)
+    // -----------------------------
+    $level1Commission = 0;
+    $level2Commission = 0;
+    $userShare        = $amount;
+
+    // ===== LEVEL 1 =====
+    if (!empty($user['sponsor_id'])) {
+
+        $level1 = $userModel->find($user['sponsor_id']);
+
+        if ($level1) {
+
+            $level1Commission = $amount * 0.10;
+            $userShare -= $level1Commission;
+
+            $userModel->update($level1['id'], [
+                'wallet' => $level1['wallet'] + $level1Commission
+            ]);
+
+            $commissionModel->insert([
+                'sponsor_id'   => $level1['id'],
+                'from_user_id' => $userId,
+                'ticket_id'    => $ticketId,
+                'amount'       => $level1Commission,
+                'level'        => 1
+            ]);
+
+            // ===== LEVEL 2 =====
+            if (!empty($level1['sponsor_id'])) {
+
+                $level2 = $userModel->find($level1['sponsor_id']);
+
+                if ($level2) {
+
+                    $level2Commission = $amount * 0.05;
+                    $userShare -= $level2Commission;
+
+                    $userModel->update($level2['id'], [
+                        'wallet' => $level2['wallet'] + $level2Commission
+                    ]);
+
+                    $commissionModel->insert([
+                        'sponsor_id'   => $level2['id'],
+                        'from_user_id' => $userId,
+                        'ticket_id'    => $ticketId,
+                        'amount'       => $level2Commission,
+                        'level'        => 2
+                    ]);
+                }
             }
         }
-
-        // Add remaining to buyer wallet
-        $userModel->update($userId, [
-            'wallet' => $user['wallet'] + $userShare
-        ]);
-
-        // Reduce ticket stock
-        $ticketModel->update($ticketId, [
-            'qty' => $ticket['qty'] - 1
-        ]);
-
-        // Save purchase history
-        $db = \Config\Database::connect();
-        $db->table('purchases')->insert([
-            'user_id'   => $userId,
-            'ticket_id' => $ticketId,
-            'price'     => $amount,
-            'created_at'=> date('Y-m-d H:i:s')
-        ]);
-
-        return redirect()->back()->with(
-            'success',
-            "Ticket Purchased Successfully! You received Rs. $userShare" .
-            ($commissionAmount ? " | Sponsor earned Rs. $commissionAmount" : "")
-        );
     }
+
+    
+    // -----------------------------
+    // ADD BUYER SHARE
+    // -----------------------------
+    $userModel->update($userId, [
+        'wallet' => $user['wallet'] + $userShare
+    ]);
+
+    // -----------------------------
+    // REDUCE STOCK SAFELY
+    // -----------------------------
+    $db->table('tickets')
+        ->where('id', $ticketId)
+        ->set('qty', 'qty - 1', false)
+        ->update();
+
+    // -----------------------------
+    // SAVE PURCHASE
+    // -----------------------------
+    $db->table('purchases')->insert([
+        'user_id'    => $userId,
+        'ticket_id'  => $ticketId,
+        'price'      => $amount,
+        'created_at' => date('Y-m-d H:i:s')
+    ]);
+
+    $db->transComplete();
+
+    if ($db->transStatus() === false) {
+        return redirect()->back()->with('error', 'Transaction failed.');
+    }
+
+    // -----------------------------
+    // SUCCESS MESSAGE
+    // -----------------------------
+    $msg = "Ticket Purchased! You received Rs. $userShare";
+
+    if ($level1Commission) {
+        $msg .= " | Level1 earned Rs. $level1Commission";
+    }
+
+    if ($level2Commission) {
+        $msg .= " | Level2 earned Rs. $level2Commission";
+    }
+
+    return redirect()->back()->with('success', $msg);
+}
+
+
 
     public function home()
 {
@@ -127,4 +211,5 @@ class Dashboard extends BaseController
 
     return view('home', $data);
 }
+
 }
