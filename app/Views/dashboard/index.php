@@ -45,7 +45,11 @@ body{
 
 <div class="header">
   <h3>Welcome <?= esc($name) ?></h3>
-  <a href="auth/logout" class="logout">Logout</a>
+
+  <div>
+    <a href="<?= base_url('dashboard/profile') ?>" class="logout" style="background:#3498db;">My Profile</a>
+    <a href="<?= base_url('auth/logout') ?>" class="logout">Logout</a>
+  </div>
 </div>
 
 <div class="container">

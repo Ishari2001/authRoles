@@ -61,9 +61,15 @@ public function dashboard()
     $data['view'] = $view;
 
     // === USERS ===
-    if ($view == 'users') {
-        $data['users'] = $userModel->findAll();
-    }
+  if ($view == 'users') {
+
+    $data['users'] = $userModel
+        ->select('users.*, s.name as sponsor_name,
+                 (SELECT COUNT(*) FROM users u2 WHERE u2.sponsor_id = users.id) as ref_count')
+        ->join('users s', 's.id = users.sponsor_id', 'left')
+        ->orderBy('users.id', 'DESC')
+        ->findAll();
+}
     // === COMMISSIONS ===
     elseif ($view == 'commissions') {
         $data['commissions'] = $commissionModel

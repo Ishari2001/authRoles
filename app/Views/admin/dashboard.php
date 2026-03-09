@@ -138,6 +138,9 @@ img{border-radius:6px;width:80px;}
             <th>Name</th>
             <th>Email</th>
             <th>Wallet Balance</th>
+            <th>Registered Under</th>
+            <th>Total Referrals</th>
+
         </tr>
         <?php foreach($users as $u): ?>
         <tr>
@@ -145,6 +148,12 @@ img{border-radius:6px;width:80px;}
             <td><?= esc($u['name']) ?></td>
             <td><?= esc($u['email']) ?></td>
             <td>Rs. <?= number_format($u['wallet'],2) ?></td>
+             <td>
+                <?= $u['sponsor_name'] ? esc($u['sponsor_name']) : 'Direct / No Sponsor' ?>
+            </td>
+
+            <!-- HOW MANY PEOPLE THIS USER REFERRED -->
+            <td><?= $u['ref_count'] ?></td>
         </tr>
         <?php endforeach; ?>
     </table>

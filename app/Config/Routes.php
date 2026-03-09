@@ -23,6 +23,8 @@ $routes->post('/saveUser', 'Auth::registerSave');
 
 $routes->get('/getSponsorName', 'Auth::getSponsorName');
 
+$routes->get('/dashboard/profile', 'Dashboard::profile');
+
 
 // Admin Auth
 $routes->get('/admin/login', 'Admin::login');

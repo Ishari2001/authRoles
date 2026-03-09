@@ -212,4 +212,57 @@ class Dashboard extends BaseController
     return view('home', $data);
 }
 
+public function profile()
+{
+    if (!session()->get('logged')) {
+        return redirect()->to('/login');
+    }
+
+    $userModel = new UserModel();
+    $db        = \Config\Database::connect();
+
+    $userId = session()->get('id');
+
+    // Get user
+    $user = $userModel->find($userId);
+
+    if (!$user) {
+        session()->destroy();
+        return redirect()->to('/login')->with('error','User not found.');
+    }
+
+    // -----------------------
+    // PURCHASES
+    // -----------------------
+    $purchases = $db->table('purchases')
+        ->select('purchases.*, tickets.title, tickets.image, tickets.event_date')
+        ->join('tickets', 'tickets.id = purchases.ticket_id')
+        ->where('purchases.user_id', $userId)
+        ->orderBy('purchases.id','DESC')
+        ->get()
+        ->getResultArray();
+
+    // -----------------------
+    // COMMISSIONS
+    // -----------------------
+   $commissions = $db->table('commissions')
+    ->select('commissions.*, users.name as from_user, tickets.title as ticket_title')
+    ->join('users','users.id = commissions.from_user_id')
+    ->join('purchases','purchases.user_id = commissions.from_user_id','left')
+    ->join('tickets','tickets.id = purchases.ticket_id','left')
+    ->where('commissions.sponsor_id', $userId)
+    ->orderBy('commissions.id','DESC')
+    ->get()
+    ->getResultArray();
+
+    $data = [
+        'user'        => $user,
+        'purchases'   => $purchases,
+        'commissions' => $commissions,
+        'refLink'     => base_url('register?ref='.$userId)
+    ];
+
+    return view('dashboard/profile', $data);
+}
+
 }

@@ -1,0 +1,1187 @@
+DEBUG - 2026-03-08 03:26:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 03:31:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 03:31:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 03:31:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 03:31:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 03:31:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 03:31:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 03:31:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 03:31:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 03:32:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 03:32:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 03:32:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 03:33:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 03:33:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 03:33:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 03:33:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 03:33:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 03:33:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 03:33:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 03:34:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 03:34:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 03:34:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 03:34:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 03:41:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 03:41:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 03:58:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 03:58:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-03-08 03:58:48 --> Error: Class "App\Models\PurchaseModel" not found
+[Method: GET, Route: dashboard/profile]
+in APPPATH\Controllers\Dashboard.php on line 220.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Dashboard->profile()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-03-08 03:58:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 04:00:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 04:00:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-03-08 04:00:38 --> mysqli_sql_exception: Not unique table/alias: 'tickets' in C:\xampp\htdocs\codeigniter\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\codeigniter\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `purchas...', 0)
+#1 C:\xampp\htdocs\codeigniter\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `purchas...')
+#2 C:\xampp\htdocs\codeigniter\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `purchas...')
+#3 C:\xampp\htdocs\codeigniter\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `purchas...', Array, false)
+#4 C:\xampp\htdocs\codeigniter\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\codeigniter\system\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\codeigniter\app\Controllers\Dashboard.php(228): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\codeigniter\system\CodeIgniter.php(933): App\Controllers\Dashboard->profile()
+#8 C:\xampp\htdocs\codeigniter\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#9 C:\xampp\htdocs\codeigniter\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\codeigniter\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\codeigniter\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\codeigniter\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2026-03-08 04:00:38 --> CodeIgniter\Database\Exceptions\DatabaseException: Not unique table/alias: 'tickets'
+[Method: GET, Route: dashboard/profile]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `purchases`.*, `tickets`.`title`, `tickets`.`price`
+FROM `tickets`
+JOIN `tickets` ON `tickets`.`id` = `purchases`.`ticket_id`
+WHERE `purchases`.`user_id` IS NULL', [], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\Dashboard.php(228): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Dashboard->profile()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-03-08 04:00:38 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Not unique table/alias: 'tickets'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `purchases`.*, `tickets`.`title`, `tickets`.`price`
+FROM `tickets`
+JOIN `tickets` ON `tickets`.`id` = `purchases`.`ticket_id`
+WHERE `purchases`.`user_id` IS NULL')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `purchases`.*, `tickets`.`title`, `tickets`.`price`
+FROM `tickets`
+JOIN `tickets` ON `tickets`.`id` = `purchases`.`ticket_id`
+WHERE `purchases`.`user_id` IS NULL')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `purchases`.*, `tickets`.`title`, `tickets`.`price`
+FROM `tickets`
+JOIN `tickets` ON `tickets`.`id` = `purchases`.`ticket_id`
+WHERE `purchases`.`user_id` IS NULL', [], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\Dashboard.php(228): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Dashboard->profile()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-03-08 04:00:38 --> [Caused by] mysqli_sql_exception: Not unique table/alias: 'tickets'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `purchases`.*, `tickets`.`title`, `tickets`.`price`
+FROM `tickets`
+JOIN `tickets` ON `tickets`.`id` = `purchases`.`ticket_id`
+WHERE `purchases`.`user_id` IS NULL', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `purchases`.*, `tickets`.`title`, `tickets`.`price`
+FROM `tickets`
+JOIN `tickets` ON `tickets`.`id` = `purchases`.`ticket_id`
+WHERE `purchases`.`user_id` IS NULL')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `purchases`.*, `tickets`.`title`, `tickets`.`price`
+FROM `tickets`
+JOIN `tickets` ON `tickets`.`id` = `purchases`.`ticket_id`
+WHERE `purchases`.`user_id` IS NULL')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `purchases`.*, `tickets`.`title`, `tickets`.`price`
+FROM `tickets`
+JOIN `tickets` ON `tickets`.`id` = `purchases`.`ticket_id`
+WHERE `purchases`.`user_id` IS NULL', [], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Dashboard.php(228): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Dashboard->profile()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-03-08 04:01:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-03-08 04:01:46 --> mysqli_sql_exception: Not unique table/alias: 'tickets' in C:\xampp\htdocs\codeigniter\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\codeigniter\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `tickets...', 0)
+#1 C:\xampp\htdocs\codeigniter\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `tickets...')
+#2 C:\xampp\htdocs\codeigniter\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `tickets...')
+#3 C:\xampp\htdocs\codeigniter\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `tickets...', Array, false)
+#4 C:\xampp\htdocs\codeigniter\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\codeigniter\system\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\codeigniter\app\Controllers\Dashboard.php(228): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\codeigniter\system\CodeIgniter.php(933): App\Controllers\Dashboard->profile()
+#8 C:\xampp\htdocs\codeigniter\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#9 C:\xampp\htdocs\codeigniter\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\codeigniter\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\codeigniter\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\codeigniter\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2026-03-08 04:01:46 --> CodeIgniter\Database\Exceptions\DatabaseException: Not unique table/alias: 'tickets'
+[Method: GET, Route: dashboard/profile]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `tickets`.*, `tickets`.`title`, `tickets`.`price`
+FROM `tickets`
+JOIN `tickets` ON `tickets`.`id` = `tickets`.`ticket_id`
+WHERE `tickets`.`user_id` IS NULL', [], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\Dashboard.php(228): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Dashboard->profile()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-03-08 04:01:46 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Not unique table/alias: 'tickets'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `tickets`.*, `tickets`.`title`, `tickets`.`price`
+FROM `tickets`
+JOIN `tickets` ON `tickets`.`id` = `tickets`.`ticket_id`
+WHERE `tickets`.`user_id` IS NULL')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `tickets`.*, `tickets`.`title`, `tickets`.`price`
+FROM `tickets`
+JOIN `tickets` ON `tickets`.`id` = `tickets`.`ticket_id`
+WHERE `tickets`.`user_id` IS NULL')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `tickets`.*, `tickets`.`title`, `tickets`.`price`
+FROM `tickets`
+JOIN `tickets` ON `tickets`.`id` = `tickets`.`ticket_id`
+WHERE `tickets`.`user_id` IS NULL', [], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\Dashboard.php(228): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Dashboard->profile()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-03-08 04:01:46 --> [Caused by] mysqli_sql_exception: Not unique table/alias: 'tickets'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `tickets`.*, `tickets`.`title`, `tickets`.`price`
+FROM `tickets`
+JOIN `tickets` ON `tickets`.`id` = `tickets`.`ticket_id`
+WHERE `tickets`.`user_id` IS NULL', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `tickets`.*, `tickets`.`title`, `tickets`.`price`
+FROM `tickets`
+JOIN `tickets` ON `tickets`.`id` = `tickets`.`ticket_id`
+WHERE `tickets`.`user_id` IS NULL')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `tickets`.*, `tickets`.`title`, `tickets`.`price`
+FROM `tickets`
+JOIN `tickets` ON `tickets`.`id` = `tickets`.`ticket_id`
+WHERE `tickets`.`user_id` IS NULL')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `tickets`.*, `tickets`.`title`, `tickets`.`price`
+FROM `tickets`
+JOIN `tickets` ON `tickets`.`id` = `tickets`.`ticket_id`
+WHERE `tickets`.`user_id` IS NULL', [], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Dashboard.php(228): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Dashboard->profile()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-03-08 04:01:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-03-08 04:01:49 --> mysqli_sql_exception: Not unique table/alias: 'tickets' in C:\xampp\htdocs\codeigniter\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\codeigniter\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `tickets...', 0)
+#1 C:\xampp\htdocs\codeigniter\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `tickets...')
+#2 C:\xampp\htdocs\codeigniter\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `tickets...')
+#3 C:\xampp\htdocs\codeigniter\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `tickets...', Array, false)
+#4 C:\xampp\htdocs\codeigniter\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\codeigniter\system\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\codeigniter\app\Controllers\Dashboard.php(228): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\codeigniter\system\CodeIgniter.php(933): App\Controllers\Dashboard->profile()
+#8 C:\xampp\htdocs\codeigniter\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#9 C:\xampp\htdocs\codeigniter\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\codeigniter\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\codeigniter\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\codeigniter\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2026-03-08 04:01:49 --> CodeIgniter\Database\Exceptions\DatabaseException: Not unique table/alias: 'tickets'
+[Method: GET, Route: dashboard/profile]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `tickets`.*, `tickets`.`title`, `tickets`.`price`
+FROM `tickets`
+JOIN `tickets` ON `tickets`.`id` = `tickets`.`ticket_id`
+WHERE `tickets`.`user_id` IS NULL', [], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\Dashboard.php(228): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Dashboard->profile()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-03-08 04:01:49 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Not unique table/alias: 'tickets'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `tickets`.*, `tickets`.`title`, `tickets`.`price`
+FROM `tickets`
+JOIN `tickets` ON `tickets`.`id` = `tickets`.`ticket_id`
+WHERE `tickets`.`user_id` IS NULL')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `tickets`.*, `tickets`.`title`, `tickets`.`price`
+FROM `tickets`
+JOIN `tickets` ON `tickets`.`id` = `tickets`.`ticket_id`
+WHERE `tickets`.`user_id` IS NULL')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `tickets`.*, `tickets`.`title`, `tickets`.`price`
+FROM `tickets`
+JOIN `tickets` ON `tickets`.`id` = `tickets`.`ticket_id`
+WHERE `tickets`.`user_id` IS NULL', [], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\Dashboard.php(228): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Dashboard->profile()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-03-08 04:01:49 --> [Caused by] mysqli_sql_exception: Not unique table/alias: 'tickets'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `tickets`.*, `tickets`.`title`, `tickets`.`price`
+FROM `tickets`
+JOIN `tickets` ON `tickets`.`id` = `tickets`.`ticket_id`
+WHERE `tickets`.`user_id` IS NULL', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `tickets`.*, `tickets`.`title`, `tickets`.`price`
+FROM `tickets`
+JOIN `tickets` ON `tickets`.`id` = `tickets`.`ticket_id`
+WHERE `tickets`.`user_id` IS NULL')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `tickets`.*, `tickets`.`title`, `tickets`.`price`
+FROM `tickets`
+JOIN `tickets` ON `tickets`.`id` = `tickets`.`ticket_id`
+WHERE `tickets`.`user_id` IS NULL')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `tickets`.*, `tickets`.`title`, `tickets`.`price`
+FROM `tickets`
+JOIN `tickets` ON `tickets`.`id` = `tickets`.`ticket_id`
+WHERE `tickets`.`user_id` IS NULL', [], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Dashboard.php(228): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Dashboard->profile()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-03-08 04:02:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-03-08 04:02:07 --> Error: Class "App\Models\PurchaseModel" not found
+[Method: GET, Route: dashboard/profile]
+in APPPATH\Controllers\Dashboard.php on line 220.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Dashboard->profile()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-03-08 04:05:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 04:09:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 04:26:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 04:26:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 04:26:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 04:26:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 04:26:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 04:26:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 04:26:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 04:26:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 04:26:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-03-08 04:26:45 --> ErrorException: Undefined array key "ticket_id"
+[Method: GET, Route: dashboard/profile]
+in APPPATH\Views\dashboard\profile.php on line 55.
+ 1 APPPATH\Views\dashboard\profile.php(55): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "ticket_id"', 'C:\\xampp\\htdocs\\codeigniter\\app\\Views\\dashboard\\profile.php', 55)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\codeigniter\\app\\Views\\dashboard\\profile.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1199): CodeIgniter\View\View->render('dashboard/profile', [], true)
+ 5 APPPATH\Controllers\Dashboard.php(259): view('dashboard/profile', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Dashboard->profile()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-03-08 04:26:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-03-08 04:26:48 --> ErrorException: Undefined array key "ticket_id"
+[Method: GET, Route: dashboard/profile]
+in APPPATH\Views\dashboard\profile.php on line 55.
+ 1 APPPATH\Views\dashboard\profile.php(55): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "ticket_id"', 'C:\\xampp\\htdocs\\codeigniter\\app\\Views\\dashboard\\profile.php', 55)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\codeigniter\\app\\Views\\dashboard\\profile.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1199): CodeIgniter\View\View->render('dashboard/profile', [], true)
+ 5 APPPATH\Controllers\Dashboard.php(259): view('dashboard/profile', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Dashboard->profile()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-03-08 04:26:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 04:26:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 04:27:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 04:27:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 04:27:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 04:27:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 04:27:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 04:27:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 04:27:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 04:27:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 04:27:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 04:27:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 04:27:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-03-08 04:27:36 --> ErrorException: Undefined array key "ticket_id"
+[Method: GET, Route: dashboard/profile]
+in APPPATH\Views\dashboard\profile.php on line 55.
+ 1 APPPATH\Views\dashboard\profile.php(55): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "ticket_id"', 'C:\\xampp\\htdocs\\codeigniter\\app\\Views\\dashboard\\profile.php', 55)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\codeigniter\\app\\Views\\dashboard\\profile.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1199): CodeIgniter\View\View->render('dashboard/profile', [], true)
+ 5 APPPATH\Controllers\Dashboard.php(259): view('dashboard/profile', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Dashboard->profile()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-03-08 04:30:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-03-08 04:30:10 --> mysqli_sql_exception: Unknown column 'commissions.ticket_id' in 'on clause' in C:\xampp\htdocs\codeigniter\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\codeigniter\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `commiss...', 0)
+#1 C:\xampp\htdocs\codeigniter\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `commiss...')
+#2 C:\xampp\htdocs\codeigniter\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `commiss...')
+#3 C:\xampp\htdocs\codeigniter\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `commiss...', Array, false)
+#4 C:\xampp\htdocs\codeigniter\app\Controllers\Dashboard.php(250): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\codeigniter\system\CodeIgniter.php(933): App\Controllers\Dashboard->profile()
+#6 C:\xampp\htdocs\codeigniter\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#7 C:\xampp\htdocs\codeigniter\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\codeigniter\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\codeigniter\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\codeigniter\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+CRITICAL - 2026-03-08 04:30:10 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'commissions.ticket_id' in 'on clause'
+[Method: GET, Route: dashboard/profile]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `commissions`.*, `users`.`name` as `from_user`, `tickets`.`title` as `ticket_title`
+FROM `commissions`
+JOIN `users` ON `users`.`id` = `commissions`.`from_user_id`
+LEFT JOIN `tickets` ON `tickets`.`id` = `commissions`.`ticket_id`
+WHERE `commissions`.`sponsor_id` = :commissions.sponsor_id:
+ORDER BY `commissions`.`id` DESC', [...], false)
+ 2 APPPATH\Controllers\Dashboard.php(250): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Dashboard->profile()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-03-08 04:30:10 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'commissions.ticket_id' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `commissions`.*, `users`.`name` as `from_user`, `tickets`.`title` as `ticket_title`
+FROM `commissions`
+JOIN `users` ON `users`.`id` = `commissions`.`from_user_id`
+LEFT JOIN `tickets` ON `tickets`.`id` = `commissions`.`ticket_id`
+WHERE `commissions`.`sponsor_id` = \'24\'
+ORDER BY `commissions`.`id` DESC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `commissions`.*, `users`.`name` as `from_user`, `tickets`.`title` as `ticket_title`
+FROM `commissions`
+JOIN `users` ON `users`.`id` = `commissions`.`from_user_id`
+LEFT JOIN `tickets` ON `tickets`.`id` = `commissions`.`ticket_id`
+WHERE `commissions`.`sponsor_id` = \'24\'
+ORDER BY `commissions`.`id` DESC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `commissions`.*, `users`.`name` as `from_user`, `tickets`.`title` as `ticket_title`
+FROM `commissions`
+JOIN `users` ON `users`.`id` = `commissions`.`from_user_id`
+LEFT JOIN `tickets` ON `tickets`.`id` = `commissions`.`ticket_id`
+WHERE `commissions`.`sponsor_id` = :commissions.sponsor_id:
+ORDER BY `commissions`.`id` DESC', [...], false)
+ 4 APPPATH\Controllers\Dashboard.php(250): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Dashboard->profile()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-03-08 04:30:10 --> [Caused by] mysqli_sql_exception: Unknown column 'commissions.ticket_id' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `commissions`.*, `users`.`name` as `from_user`, `tickets`.`title` as `ticket_title`
+FROM `commissions`
+JOIN `users` ON `users`.`id` = `commissions`.`from_user_id`
+LEFT JOIN `tickets` ON `tickets`.`id` = `commissions`.`ticket_id`
+WHERE `commissions`.`sponsor_id` = \'24\'
+ORDER BY `commissions`.`id` DESC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `commissions`.*, `users`.`name` as `from_user`, `tickets`.`title` as `ticket_title`
+FROM `commissions`
+JOIN `users` ON `users`.`id` = `commissions`.`from_user_id`
+LEFT JOIN `tickets` ON `tickets`.`id` = `commissions`.`ticket_id`
+WHERE `commissions`.`sponsor_id` = \'24\'
+ORDER BY `commissions`.`id` DESC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `commissions`.*, `users`.`name` as `from_user`, `tickets`.`title` as `ticket_title`
+FROM `commissions`
+JOIN `users` ON `users`.`id` = `commissions`.`from_user_id`
+LEFT JOIN `tickets` ON `tickets`.`id` = `commissions`.`ticket_id`
+WHERE `commissions`.`sponsor_id` = \'24\'
+ORDER BY `commissions`.`id` DESC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `commissions`.*, `users`.`name` as `from_user`, `tickets`.`title` as `ticket_title`
+FROM `commissions`
+JOIN `users` ON `users`.`id` = `commissions`.`from_user_id`
+LEFT JOIN `tickets` ON `tickets`.`id` = `commissions`.`ticket_id`
+WHERE `commissions`.`sponsor_id` = :commissions.sponsor_id:
+ORDER BY `commissions`.`id` DESC', [...], false)
+ 5 APPPATH\Controllers\Dashboard.php(250): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Dashboard->profile()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-03-08 04:30:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-03-08 04:30:16 --> mysqli_sql_exception: Unknown column 'commissions.ticket_id' in 'on clause' in C:\xampp\htdocs\codeigniter\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\codeigniter\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `commiss...', 0)
+#1 C:\xampp\htdocs\codeigniter\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `commiss...')
+#2 C:\xampp\htdocs\codeigniter\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `commiss...')
+#3 C:\xampp\htdocs\codeigniter\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `commiss...', Array, false)
+#4 C:\xampp\htdocs\codeigniter\app\Controllers\Dashboard.php(250): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\codeigniter\system\CodeIgniter.php(933): App\Controllers\Dashboard->profile()
+#6 C:\xampp\htdocs\codeigniter\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#7 C:\xampp\htdocs\codeigniter\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\codeigniter\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\codeigniter\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\codeigniter\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+CRITICAL - 2026-03-08 04:30:16 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'commissions.ticket_id' in 'on clause'
+[Method: GET, Route: dashboard/profile]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `commissions`.*, `users`.`name` as `from_user`, `tickets`.`title` as `ticket_title`
+FROM `commissions`
+JOIN `users` ON `users`.`id` = `commissions`.`from_user_id`
+LEFT JOIN `tickets` ON `tickets`.`id` = `commissions`.`ticket_id`
+WHERE `commissions`.`sponsor_id` = :commissions.sponsor_id:
+ORDER BY `commissions`.`id` DESC', [...], false)
+ 2 APPPATH\Controllers\Dashboard.php(250): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Dashboard->profile()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-03-08 04:30:16 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'commissions.ticket_id' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `commissions`.*, `users`.`name` as `from_user`, `tickets`.`title` as `ticket_title`
+FROM `commissions`
+JOIN `users` ON `users`.`id` = `commissions`.`from_user_id`
+LEFT JOIN `tickets` ON `tickets`.`id` = `commissions`.`ticket_id`
+WHERE `commissions`.`sponsor_id` = \'24\'
+ORDER BY `commissions`.`id` DESC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `commissions`.*, `users`.`name` as `from_user`, `tickets`.`title` as `ticket_title`
+FROM `commissions`
+JOIN `users` ON `users`.`id` = `commissions`.`from_user_id`
+LEFT JOIN `tickets` ON `tickets`.`id` = `commissions`.`ticket_id`
+WHERE `commissions`.`sponsor_id` = \'24\'
+ORDER BY `commissions`.`id` DESC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `commissions`.*, `users`.`name` as `from_user`, `tickets`.`title` as `ticket_title`
+FROM `commissions`
+JOIN `users` ON `users`.`id` = `commissions`.`from_user_id`
+LEFT JOIN `tickets` ON `tickets`.`id` = `commissions`.`ticket_id`
+WHERE `commissions`.`sponsor_id` = :commissions.sponsor_id:
+ORDER BY `commissions`.`id` DESC', [...], false)
+ 4 APPPATH\Controllers\Dashboard.php(250): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Dashboard->profile()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-03-08 04:30:16 --> [Caused by] mysqli_sql_exception: Unknown column 'commissions.ticket_id' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `commissions`.*, `users`.`name` as `from_user`, `tickets`.`title` as `ticket_title`
+FROM `commissions`
+JOIN `users` ON `users`.`id` = `commissions`.`from_user_id`
+LEFT JOIN `tickets` ON `tickets`.`id` = `commissions`.`ticket_id`
+WHERE `commissions`.`sponsor_id` = \'24\'
+ORDER BY `commissions`.`id` DESC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `commissions`.*, `users`.`name` as `from_user`, `tickets`.`title` as `ticket_title`
+FROM `commissions`
+JOIN `users` ON `users`.`id` = `commissions`.`from_user_id`
+LEFT JOIN `tickets` ON `tickets`.`id` = `commissions`.`ticket_id`
+WHERE `commissions`.`sponsor_id` = \'24\'
+ORDER BY `commissions`.`id` DESC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `commissions`.*, `users`.`name` as `from_user`, `tickets`.`title` as `ticket_title`
+FROM `commissions`
+JOIN `users` ON `users`.`id` = `commissions`.`from_user_id`
+LEFT JOIN `tickets` ON `tickets`.`id` = `commissions`.`ticket_id`
+WHERE `commissions`.`sponsor_id` = \'24\'
+ORDER BY `commissions`.`id` DESC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `commissions`.*, `users`.`name` as `from_user`, `tickets`.`title` as `ticket_title`
+FROM `commissions`
+JOIN `users` ON `users`.`id` = `commissions`.`from_user_id`
+LEFT JOIN `tickets` ON `tickets`.`id` = `commissions`.`ticket_id`
+WHERE `commissions`.`sponsor_id` = :commissions.sponsor_id:
+ORDER BY `commissions`.`id` DESC', [...], false)
+ 5 APPPATH\Controllers\Dashboard.php(250): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Dashboard->profile()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-03-08 04:37:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 04:38:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 04:38:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 04:38:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 04:38:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 04:38:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 04:38:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 04:38:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 05:21:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 05:21:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 05:21:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 05:21:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 05:21:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 05:21:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 05:21:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 05:21:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 05:24:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 05:24:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 05:25:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 05:25:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 05:25:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 05:25:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 05:25:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 05:25:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 05:26:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 05:26:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 05:26:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 05:26:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 05:26:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 05:26:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 05:26:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 05:26:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 05:27:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 05:27:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 05:27:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 05:27:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 05:27:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 05:27:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 05:27:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 05:32:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-03-08 05:32:44 --> mysqli_sql_exception: Unknown column 'commissions.ticket_id' in 'on clause' in C:\xampp\htdocs\codeigniter\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\codeigniter\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `commiss...', 0)
+#1 C:\xampp\htdocs\codeigniter\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `commiss...')
+#2 C:\xampp\htdocs\codeigniter\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `commiss...')
+#3 C:\xampp\htdocs\codeigniter\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `commiss...', Array, false)
+#4 C:\xampp\htdocs\codeigniter\app\Controllers\Dashboard.php(250): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\codeigniter\system\CodeIgniter.php(933): App\Controllers\Dashboard->profile()
+#6 C:\xampp\htdocs\codeigniter\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#7 C:\xampp\htdocs\codeigniter\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\codeigniter\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\codeigniter\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\codeigniter\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+CRITICAL - 2026-03-08 05:32:44 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'commissions.ticket_id' in 'on clause'
+[Method: GET, Route: dashboard/profile]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `commissions`.*, `users`.`name` as `from_user`, `tickets`.`title` as `ticket_title`
+FROM `commissions`
+JOIN `users` ON `users`.`id` = `commissions`.`from_user_id`
+LEFT JOIN `tickets` ON `tickets`.`id` = `commissions`.`ticket_id`
+WHERE `commissions`.`sponsor_id` = :commissions.sponsor_id:
+ORDER BY `commissions`.`id` DESC', [...], false)
+ 2 APPPATH\Controllers\Dashboard.php(250): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Dashboard->profile()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-03-08 05:32:44 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'commissions.ticket_id' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `commissions`.*, `users`.`name` as `from_user`, `tickets`.`title` as `ticket_title`
+FROM `commissions`
+JOIN `users` ON `users`.`id` = `commissions`.`from_user_id`
+LEFT JOIN `tickets` ON `tickets`.`id` = `commissions`.`ticket_id`
+WHERE `commissions`.`sponsor_id` = \'42\'
+ORDER BY `commissions`.`id` DESC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `commissions`.*, `users`.`name` as `from_user`, `tickets`.`title` as `ticket_title`
+FROM `commissions`
+JOIN `users` ON `users`.`id` = `commissions`.`from_user_id`
+LEFT JOIN `tickets` ON `tickets`.`id` = `commissions`.`ticket_id`
+WHERE `commissions`.`sponsor_id` = \'42\'
+ORDER BY `commissions`.`id` DESC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `commissions`.*, `users`.`name` as `from_user`, `tickets`.`title` as `ticket_title`
+FROM `commissions`
+JOIN `users` ON `users`.`id` = `commissions`.`from_user_id`
+LEFT JOIN `tickets` ON `tickets`.`id` = `commissions`.`ticket_id`
+WHERE `commissions`.`sponsor_id` = :commissions.sponsor_id:
+ORDER BY `commissions`.`id` DESC', [...], false)
+ 4 APPPATH\Controllers\Dashboard.php(250): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Dashboard->profile()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-03-08 05:32:44 --> [Caused by] mysqli_sql_exception: Unknown column 'commissions.ticket_id' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `commissions`.*, `users`.`name` as `from_user`, `tickets`.`title` as `ticket_title`
+FROM `commissions`
+JOIN `users` ON `users`.`id` = `commissions`.`from_user_id`
+LEFT JOIN `tickets` ON `tickets`.`id` = `commissions`.`ticket_id`
+WHERE `commissions`.`sponsor_id` = \'42\'
+ORDER BY `commissions`.`id` DESC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `commissions`.*, `users`.`name` as `from_user`, `tickets`.`title` as `ticket_title`
+FROM `commissions`
+JOIN `users` ON `users`.`id` = `commissions`.`from_user_id`
+LEFT JOIN `tickets` ON `tickets`.`id` = `commissions`.`ticket_id`
+WHERE `commissions`.`sponsor_id` = \'42\'
+ORDER BY `commissions`.`id` DESC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `commissions`.*, `users`.`name` as `from_user`, `tickets`.`title` as `ticket_title`
+FROM `commissions`
+JOIN `users` ON `users`.`id` = `commissions`.`from_user_id`
+LEFT JOIN `tickets` ON `tickets`.`id` = `commissions`.`ticket_id`
+WHERE `commissions`.`sponsor_id` = \'42\'
+ORDER BY `commissions`.`id` DESC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `commissions`.*, `users`.`name` as `from_user`, `tickets`.`title` as `ticket_title`
+FROM `commissions`
+JOIN `users` ON `users`.`id` = `commissions`.`from_user_id`
+LEFT JOIN `tickets` ON `tickets`.`id` = `commissions`.`ticket_id`
+WHERE `commissions`.`sponsor_id` = :commissions.sponsor_id:
+ORDER BY `commissions`.`id` DESC', [...], false)
+ 5 APPPATH\Controllers\Dashboard.php(250): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Dashboard->profile()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-03-08 05:33:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-03-08 05:33:01 --> mysqli_sql_exception: Unknown column 'commissions.ticket_id' in 'on clause' in C:\xampp\htdocs\codeigniter\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\codeigniter\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `commiss...', 0)
+#1 C:\xampp\htdocs\codeigniter\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `commiss...')
+#2 C:\xampp\htdocs\codeigniter\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `commiss...')
+#3 C:\xampp\htdocs\codeigniter\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `commiss...', Array, false)
+#4 C:\xampp\htdocs\codeigniter\app\Controllers\Dashboard.php(252): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\codeigniter\system\CodeIgniter.php(933): App\Controllers\Dashboard->profile()
+#6 C:\xampp\htdocs\codeigniter\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#7 C:\xampp\htdocs\codeigniter\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\codeigniter\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\codeigniter\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\codeigniter\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+CRITICAL - 2026-03-08 05:33:01 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'commissions.ticket_id' in 'on clause'
+[Method: GET, Route: dashboard/profile]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `commissions`.*, `users`.`name` as `from_user`, `tickets`.`title` as `ticket_title`
+FROM `commissions`
+JOIN `users` ON `users`.`id` = `commissions`.`from_user_id`
+LEFT JOIN `tickets` ON `tickets`.`id` = `commissions`.`ticket_id`
+WHERE `commissions`.`sponsor_id` = :commissions.sponsor_id:
+ORDER BY `commissions`.`id` DESC', [...], false)
+ 2 APPPATH\Controllers\Dashboard.php(252): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Dashboard->profile()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-03-08 05:33:01 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'commissions.ticket_id' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `commissions`.*, `users`.`name` as `from_user`, `tickets`.`title` as `ticket_title`
+FROM `commissions`
+JOIN `users` ON `users`.`id` = `commissions`.`from_user_id`
+LEFT JOIN `tickets` ON `tickets`.`id` = `commissions`.`ticket_id`
+WHERE `commissions`.`sponsor_id` = \'42\'
+ORDER BY `commissions`.`id` DESC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `commissions`.*, `users`.`name` as `from_user`, `tickets`.`title` as `ticket_title`
+FROM `commissions`
+JOIN `users` ON `users`.`id` = `commissions`.`from_user_id`
+LEFT JOIN `tickets` ON `tickets`.`id` = `commissions`.`ticket_id`
+WHERE `commissions`.`sponsor_id` = \'42\'
+ORDER BY `commissions`.`id` DESC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `commissions`.*, `users`.`name` as `from_user`, `tickets`.`title` as `ticket_title`
+FROM `commissions`
+JOIN `users` ON `users`.`id` = `commissions`.`from_user_id`
+LEFT JOIN `tickets` ON `tickets`.`id` = `commissions`.`ticket_id`
+WHERE `commissions`.`sponsor_id` = :commissions.sponsor_id:
+ORDER BY `commissions`.`id` DESC', [...], false)
+ 4 APPPATH\Controllers\Dashboard.php(252): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Dashboard->profile()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-03-08 05:33:01 --> [Caused by] mysqli_sql_exception: Unknown column 'commissions.ticket_id' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `commissions`.*, `users`.`name` as `from_user`, `tickets`.`title` as `ticket_title`
+FROM `commissions`
+JOIN `users` ON `users`.`id` = `commissions`.`from_user_id`
+LEFT JOIN `tickets` ON `tickets`.`id` = `commissions`.`ticket_id`
+WHERE `commissions`.`sponsor_id` = \'42\'
+ORDER BY `commissions`.`id` DESC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `commissions`.*, `users`.`name` as `from_user`, `tickets`.`title` as `ticket_title`
+FROM `commissions`
+JOIN `users` ON `users`.`id` = `commissions`.`from_user_id`
+LEFT JOIN `tickets` ON `tickets`.`id` = `commissions`.`ticket_id`
+WHERE `commissions`.`sponsor_id` = \'42\'
+ORDER BY `commissions`.`id` DESC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `commissions`.*, `users`.`name` as `from_user`, `tickets`.`title` as `ticket_title`
+FROM `commissions`
+JOIN `users` ON `users`.`id` = `commissions`.`from_user_id`
+LEFT JOIN `tickets` ON `tickets`.`id` = `commissions`.`ticket_id`
+WHERE `commissions`.`sponsor_id` = \'42\'
+ORDER BY `commissions`.`id` DESC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `commissions`.*, `users`.`name` as `from_user`, `tickets`.`title` as `ticket_title`
+FROM `commissions`
+JOIN `users` ON `users`.`id` = `commissions`.`from_user_id`
+LEFT JOIN `tickets` ON `tickets`.`id` = `commissions`.`ticket_id`
+WHERE `commissions`.`sponsor_id` = :commissions.sponsor_id:
+ORDER BY `commissions`.`id` DESC', [...], false)
+ 5 APPPATH\Controllers\Dashboard.php(252): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Dashboard->profile()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-03-08 05:33:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-03-08 05:33:12 --> mysqli_sql_exception: Unknown column 'commissions.ticket_id' in 'on clause' in C:\xampp\htdocs\codeigniter\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\codeigniter\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `commiss...', 0)
+#1 C:\xampp\htdocs\codeigniter\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `commiss...')
+#2 C:\xampp\htdocs\codeigniter\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `commiss...')
+#3 C:\xampp\htdocs\codeigniter\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `commiss...', Array, false)
+#4 C:\xampp\htdocs\codeigniter\app\Controllers\Dashboard.php(250): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\codeigniter\system\CodeIgniter.php(933): App\Controllers\Dashboard->profile()
+#6 C:\xampp\htdocs\codeigniter\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#7 C:\xampp\htdocs\codeigniter\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\codeigniter\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\codeigniter\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\codeigniter\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+CRITICAL - 2026-03-08 05:33:12 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'commissions.ticket_id' in 'on clause'
+[Method: GET, Route: dashboard/profile]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `commissions`.*, `users`.`name` as `from_user`, `tickets`.`title` as `ticket_title`
+FROM `commissions`
+JOIN `users` ON `users`.`id` = `commissions`.`from_user_id`
+LEFT JOIN `tickets` ON `tickets`.`id` = `commissions`.`ticket_id`
+WHERE `commissions`.`sponsor_id` = :commissions.sponsor_id:
+ORDER BY `commissions`.`id` DESC', [...], false)
+ 2 APPPATH\Controllers\Dashboard.php(250): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Dashboard->profile()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-03-08 05:33:12 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'commissions.ticket_id' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `commissions`.*, `users`.`name` as `from_user`, `tickets`.`title` as `ticket_title`
+FROM `commissions`
+JOIN `users` ON `users`.`id` = `commissions`.`from_user_id`
+LEFT JOIN `tickets` ON `tickets`.`id` = `commissions`.`ticket_id`
+WHERE `commissions`.`sponsor_id` = \'42\'
+ORDER BY `commissions`.`id` DESC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `commissions`.*, `users`.`name` as `from_user`, `tickets`.`title` as `ticket_title`
+FROM `commissions`
+JOIN `users` ON `users`.`id` = `commissions`.`from_user_id`
+LEFT JOIN `tickets` ON `tickets`.`id` = `commissions`.`ticket_id`
+WHERE `commissions`.`sponsor_id` = \'42\'
+ORDER BY `commissions`.`id` DESC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `commissions`.*, `users`.`name` as `from_user`, `tickets`.`title` as `ticket_title`
+FROM `commissions`
+JOIN `users` ON `users`.`id` = `commissions`.`from_user_id`
+LEFT JOIN `tickets` ON `tickets`.`id` = `commissions`.`ticket_id`
+WHERE `commissions`.`sponsor_id` = :commissions.sponsor_id:
+ORDER BY `commissions`.`id` DESC', [...], false)
+ 4 APPPATH\Controllers\Dashboard.php(250): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Dashboard->profile()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-03-08 05:33:12 --> [Caused by] mysqli_sql_exception: Unknown column 'commissions.ticket_id' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `commissions`.*, `users`.`name` as `from_user`, `tickets`.`title` as `ticket_title`
+FROM `commissions`
+JOIN `users` ON `users`.`id` = `commissions`.`from_user_id`
+LEFT JOIN `tickets` ON `tickets`.`id` = `commissions`.`ticket_id`
+WHERE `commissions`.`sponsor_id` = \'42\'
+ORDER BY `commissions`.`id` DESC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `commissions`.*, `users`.`name` as `from_user`, `tickets`.`title` as `ticket_title`
+FROM `commissions`
+JOIN `users` ON `users`.`id` = `commissions`.`from_user_id`
+LEFT JOIN `tickets` ON `tickets`.`id` = `commissions`.`ticket_id`
+WHERE `commissions`.`sponsor_id` = \'42\'
+ORDER BY `commissions`.`id` DESC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `commissions`.*, `users`.`name` as `from_user`, `tickets`.`title` as `ticket_title`
+FROM `commissions`
+JOIN `users` ON `users`.`id` = `commissions`.`from_user_id`
+LEFT JOIN `tickets` ON `tickets`.`id` = `commissions`.`ticket_id`
+WHERE `commissions`.`sponsor_id` = \'42\'
+ORDER BY `commissions`.`id` DESC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `commissions`.*, `users`.`name` as `from_user`, `tickets`.`title` as `ticket_title`
+FROM `commissions`
+JOIN `users` ON `users`.`id` = `commissions`.`from_user_id`
+LEFT JOIN `tickets` ON `tickets`.`id` = `commissions`.`ticket_id`
+WHERE `commissions`.`sponsor_id` = :commissions.sponsor_id:
+ORDER BY `commissions`.`id` DESC', [...], false)
+ 5 APPPATH\Controllers\Dashboard.php(250): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Dashboard->profile()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-03-08 05:33:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-03-08 05:33:15 --> mysqli_sql_exception: Unknown column 'commissions.ticket_id' in 'on clause' in C:\xampp\htdocs\codeigniter\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\codeigniter\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `commiss...', 0)
+#1 C:\xampp\htdocs\codeigniter\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `commiss...')
+#2 C:\xampp\htdocs\codeigniter\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `commiss...')
+#3 C:\xampp\htdocs\codeigniter\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `commiss...', Array, false)
+#4 C:\xampp\htdocs\codeigniter\app\Controllers\Dashboard.php(250): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\codeigniter\system\CodeIgniter.php(933): App\Controllers\Dashboard->profile()
+#6 C:\xampp\htdocs\codeigniter\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#7 C:\xampp\htdocs\codeigniter\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\codeigniter\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\codeigniter\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\codeigniter\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+CRITICAL - 2026-03-08 05:33:15 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'commissions.ticket_id' in 'on clause'
+[Method: GET, Route: dashboard/profile]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `commissions`.*, `users`.`name` as `from_user`, `tickets`.`title` as `ticket_title`
+FROM `commissions`
+JOIN `users` ON `users`.`id` = `commissions`.`from_user_id`
+LEFT JOIN `tickets` ON `tickets`.`id` = `commissions`.`ticket_id`
+WHERE `commissions`.`sponsor_id` = :commissions.sponsor_id:
+ORDER BY `commissions`.`id` DESC', [...], false)
+ 2 APPPATH\Controllers\Dashboard.php(250): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Dashboard->profile()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-03-08 05:33:15 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'commissions.ticket_id' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `commissions`.*, `users`.`name` as `from_user`, `tickets`.`title` as `ticket_title`
+FROM `commissions`
+JOIN `users` ON `users`.`id` = `commissions`.`from_user_id`
+LEFT JOIN `tickets` ON `tickets`.`id` = `commissions`.`ticket_id`
+WHERE `commissions`.`sponsor_id` = \'42\'
+ORDER BY `commissions`.`id` DESC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `commissions`.*, `users`.`name` as `from_user`, `tickets`.`title` as `ticket_title`
+FROM `commissions`
+JOIN `users` ON `users`.`id` = `commissions`.`from_user_id`
+LEFT JOIN `tickets` ON `tickets`.`id` = `commissions`.`ticket_id`
+WHERE `commissions`.`sponsor_id` = \'42\'
+ORDER BY `commissions`.`id` DESC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `commissions`.*, `users`.`name` as `from_user`, `tickets`.`title` as `ticket_title`
+FROM `commissions`
+JOIN `users` ON `users`.`id` = `commissions`.`from_user_id`
+LEFT JOIN `tickets` ON `tickets`.`id` = `commissions`.`ticket_id`
+WHERE `commissions`.`sponsor_id` = :commissions.sponsor_id:
+ORDER BY `commissions`.`id` DESC', [...], false)
+ 4 APPPATH\Controllers\Dashboard.php(250): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Dashboard->profile()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-03-08 05:33:15 --> [Caused by] mysqli_sql_exception: Unknown column 'commissions.ticket_id' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `commissions`.*, `users`.`name` as `from_user`, `tickets`.`title` as `ticket_title`
+FROM `commissions`
+JOIN `users` ON `users`.`id` = `commissions`.`from_user_id`
+LEFT JOIN `tickets` ON `tickets`.`id` = `commissions`.`ticket_id`
+WHERE `commissions`.`sponsor_id` = \'42\'
+ORDER BY `commissions`.`id` DESC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `commissions`.*, `users`.`name` as `from_user`, `tickets`.`title` as `ticket_title`
+FROM `commissions`
+JOIN `users` ON `users`.`id` = `commissions`.`from_user_id`
+LEFT JOIN `tickets` ON `tickets`.`id` = `commissions`.`ticket_id`
+WHERE `commissions`.`sponsor_id` = \'42\'
+ORDER BY `commissions`.`id` DESC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `commissions`.*, `users`.`name` as `from_user`, `tickets`.`title` as `ticket_title`
+FROM `commissions`
+JOIN `users` ON `users`.`id` = `commissions`.`from_user_id`
+LEFT JOIN `tickets` ON `tickets`.`id` = `commissions`.`ticket_id`
+WHERE `commissions`.`sponsor_id` = \'42\'
+ORDER BY `commissions`.`id` DESC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `commissions`.*, `users`.`name` as `from_user`, `tickets`.`title` as `ticket_title`
+FROM `commissions`
+JOIN `users` ON `users`.`id` = `commissions`.`from_user_id`
+LEFT JOIN `tickets` ON `tickets`.`id` = `commissions`.`ticket_id`
+WHERE `commissions`.`sponsor_id` = :commissions.sponsor_id:
+ORDER BY `commissions`.`id` DESC', [...], false)
+ 5 APPPATH\Controllers\Dashboard.php(250): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Dashboard->profile()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-03-08 05:33:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-03-08 05:33:31 --> ErrorException: Undefined variable $commissions
+[Method: GET, Route: dashboard/profile]
+in APPPATH\Views\dashboard\profile.php on line 41.
+ 1 APPPATH\Views\dashboard\profile.php(41): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $commissions', 'C:\\xampp\\htdocs\\codeigniter\\app\\Views\\dashboard\\profile.php', 41)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\codeigniter\\app\\Views\\dashboard\\profile.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1199): CodeIgniter\View\View->render('dashboard/profile', [], true)
+ 5 APPPATH\Controllers\Dashboard.php(249): view('dashboard/profile', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Dashboard->profile()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-03-08 05:34:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-03-08 05:34:05 --> ErrorException: Undefined variable $commissions
+[Method: GET, Route: dashboard/profile]
+in APPPATH\Views\dashboard\profile.php on line 41.
+ 1 APPPATH\Views\dashboard\profile.php(41): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $commissions', 'C:\\xampp\\htdocs\\codeigniter\\app\\Views\\dashboard\\profile.php', 41)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\codeigniter\\app\\Views\\dashboard\\profile.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1199): CodeIgniter\View\View->render('dashboard/profile', [], true)
+ 5 APPPATH\Controllers\Dashboard.php(260): view('dashboard/profile', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Dashboard->profile()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-03-08 05:34:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-03-08 05:34:07 --> ErrorException: Undefined variable $commissions
+[Method: GET, Route: dashboard/profile]
+in APPPATH\Views\dashboard\profile.php on line 41.
+ 1 APPPATH\Views\dashboard\profile.php(41): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $commissions', 'C:\\xampp\\htdocs\\codeigniter\\app\\Views\\dashboard\\profile.php', 41)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\codeigniter\\app\\Views\\dashboard\\profile.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1199): CodeIgniter\View\View->render('dashboard/profile', [], true)
+ 5 APPPATH\Controllers\Dashboard.php(260): view('dashboard/profile', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Dashboard->profile()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-03-08 05:34:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 05:34:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 05:34:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 05:34:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 05:34:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 05:34:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 05:34:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-03-08 05:34:28 --> ErrorException: Undefined variable $commissions
+[Method: GET, Route: dashboard/profile]
+in APPPATH\Views\dashboard\profile.php on line 41.
+ 1 APPPATH\Views\dashboard\profile.php(41): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $commissions', 'C:\\xampp\\htdocs\\codeigniter\\app\\Views\\dashboard\\profile.php', 41)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\codeigniter\\app\\Views\\dashboard\\profile.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1199): CodeIgniter\View\View->render('dashboard/profile', [], true)
+ 5 APPPATH\Controllers\Dashboard.php(260): view('dashboard/profile', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Dashboard->profile()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-03-08 05:36:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-03-08 05:36:51 --> mysqli_sql_exception: Unknown column 'commissions.ticket_id' in 'on clause' in C:\xampp\htdocs\codeigniter\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\codeigniter\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `commiss...', 0)
+#1 C:\xampp\htdocs\codeigniter\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `commiss...')
+#2 C:\xampp\htdocs\codeigniter\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `commiss...')
+#3 C:\xampp\htdocs\codeigniter\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `commiss...', Array, false)
+#4 C:\xampp\htdocs\codeigniter\app\Controllers\Dashboard.php(254): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\codeigniter\system\CodeIgniter.php(933): App\Controllers\Dashboard->profile()
+#6 C:\xampp\htdocs\codeigniter\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#7 C:\xampp\htdocs\codeigniter\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\codeigniter\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\codeigniter\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\codeigniter\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+CRITICAL - 2026-03-08 05:36:51 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'commissions.ticket_id' in 'on clause'
+[Method: GET, Route: dashboard/profile]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `commissions`.*, `users`.`name` as `from_user`, `tickets`.`title` as `ticket_title`
+FROM `commissions`
+JOIN `users` ON `users`.`id` = `commissions`.`from_user_id`
+LEFT JOIN `tickets` ON `tickets`.`id` = `commissions`.`ticket_id`
+WHERE `commissions`.`sponsor_id` = :commissions.sponsor_id:
+ORDER BY `commissions`.`id` DESC', [...], false)
+ 2 APPPATH\Controllers\Dashboard.php(254): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Dashboard->profile()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-03-08 05:36:51 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'commissions.ticket_id' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `commissions`.*, `users`.`name` as `from_user`, `tickets`.`title` as `ticket_title`
+FROM `commissions`
+JOIN `users` ON `users`.`id` = `commissions`.`from_user_id`
+LEFT JOIN `tickets` ON `tickets`.`id` = `commissions`.`ticket_id`
+WHERE `commissions`.`sponsor_id` = \'42\'
+ORDER BY `commissions`.`id` DESC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `commissions`.*, `users`.`name` as `from_user`, `tickets`.`title` as `ticket_title`
+FROM `commissions`
+JOIN `users` ON `users`.`id` = `commissions`.`from_user_id`
+LEFT JOIN `tickets` ON `tickets`.`id` = `commissions`.`ticket_id`
+WHERE `commissions`.`sponsor_id` = \'42\'
+ORDER BY `commissions`.`id` DESC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `commissions`.*, `users`.`name` as `from_user`, `tickets`.`title` as `ticket_title`
+FROM `commissions`
+JOIN `users` ON `users`.`id` = `commissions`.`from_user_id`
+LEFT JOIN `tickets` ON `tickets`.`id` = `commissions`.`ticket_id`
+WHERE `commissions`.`sponsor_id` = :commissions.sponsor_id:
+ORDER BY `commissions`.`id` DESC', [...], false)
+ 4 APPPATH\Controllers\Dashboard.php(254): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Dashboard->profile()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-03-08 05:36:51 --> [Caused by] mysqli_sql_exception: Unknown column 'commissions.ticket_id' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `commissions`.*, `users`.`name` as `from_user`, `tickets`.`title` as `ticket_title`
+FROM `commissions`
+JOIN `users` ON `users`.`id` = `commissions`.`from_user_id`
+LEFT JOIN `tickets` ON `tickets`.`id` = `commissions`.`ticket_id`
+WHERE `commissions`.`sponsor_id` = \'42\'
+ORDER BY `commissions`.`id` DESC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `commissions`.*, `users`.`name` as `from_user`, `tickets`.`title` as `ticket_title`
+FROM `commissions`
+JOIN `users` ON `users`.`id` = `commissions`.`from_user_id`
+LEFT JOIN `tickets` ON `tickets`.`id` = `commissions`.`ticket_id`
+WHERE `commissions`.`sponsor_id` = \'42\'
+ORDER BY `commissions`.`id` DESC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `commissions`.*, `users`.`name` as `from_user`, `tickets`.`title` as `ticket_title`
+FROM `commissions`
+JOIN `users` ON `users`.`id` = `commissions`.`from_user_id`
+LEFT JOIN `tickets` ON `tickets`.`id` = `commissions`.`ticket_id`
+WHERE `commissions`.`sponsor_id` = \'42\'
+ORDER BY `commissions`.`id` DESC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `commissions`.*, `users`.`name` as `from_user`, `tickets`.`title` as `ticket_title`
+FROM `commissions`
+JOIN `users` ON `users`.`id` = `commissions`.`from_user_id`
+LEFT JOIN `tickets` ON `tickets`.`id` = `commissions`.`ticket_id`
+WHERE `commissions`.`sponsor_id` = :commissions.sponsor_id:
+ORDER BY `commissions`.`id` DESC', [...], false)
+ 5 APPPATH\Controllers\Dashboard.php(254): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Dashboard->profile()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-03-08 05:38:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 05:38:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 05:38:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 05:38:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 05:39:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 05:39:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 05:39:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 05:39:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 05:40:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-03-08 05:40:08 --> ParseError: syntax error, unexpected token "else"
+[Method: GET, Route: dashboard/profile]
+in APPPATH\Views\dashboard\profile.php on line 58.
+ 1 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1199): CodeIgniter\View\View->render('dashboard/profile', [], true)
+ 3 APPPATH\Controllers\Dashboard.php(265): view('dashboard/profile', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Dashboard->profile()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2026-03-08 05:41:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 05:42:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 05:42:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 05:42:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 05:42:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 05:42:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 05:42:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 05:42:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 05:42:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 05:45:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 05:45:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 05:56:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 05:58:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 05:59:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 05:59:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 05:59:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 06:00:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 06:00:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 06:00:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 06:00:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 06:00:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 06:00:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 06:00:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 06:00:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 06:00:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 06:01:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 06:01:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 06:01:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 06:01:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 06:01:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 06:01:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 06:01:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 06:01:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 06:01:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 06:01:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 06:03:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 06:03:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 06:03:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 06:03:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 06:03:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 06:03:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 06:03:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 06:03:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 06:03:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 06:03:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 06:03:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 06:03:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 06:03:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 06:03:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 06:03:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 06:04:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 06:04:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 06:04:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 06:04:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 06:04:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 06:04:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 06:05:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 06:05:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 06:05:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-03-08 06:05:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
