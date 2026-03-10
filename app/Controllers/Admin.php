@@ -223,7 +223,8 @@ public function saveTicket()
         'image'          => $imageName
     ]);
 
-    return redirect()->to('/admin/tickets')->with('success','Ticket Added Successfully');
+    return redirect()->to('/admin/dashboard?view=tickets')
+       ->with('success','Ticket Added Successfully');
 }
 
 

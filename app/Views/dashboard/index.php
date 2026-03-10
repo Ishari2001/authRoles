@@ -55,11 +55,7 @@ body{
 <div class="container">
 
   
-  <div class="card">
-    <h3>Dashboard Home</h3>
-    <p>This section is visible to all roles.</p>
-  </div>
-
+  
   
   <?php if($role == 1): ?>
   <div class="card">

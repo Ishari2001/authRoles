@@ -245,8 +245,8 @@ public function profile()
     // -----------------------
     // COMMISSIONS
     // -----------------------
-   $commissions = $db->table('commissions')
-    ->select('commissions.*, users.name as from_user, tickets.title as ticket_title')
+  $commissions = $db->table('commissions')
+    ->select('commissions.*, users.name as from_user, tickets.title as ticket_title, tickets.image as ticket_image')
     ->join('users','users.id = commissions.from_user_id')
     ->join('purchases','purchases.user_id = commissions.from_user_id','left')
     ->join('tickets','tickets.id = purchases.ticket_id','left')
