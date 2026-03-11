@@ -285,4 +285,12 @@ public function tickets()
 
     return view('admin/tickets', $data);
 }
+
+public function logout()
+{
+    session()->destroy(); // destroy admin session
+
+    return redirect()->to('/admin/login')
+        ->with('success','Logged out successfully');
+}
 }

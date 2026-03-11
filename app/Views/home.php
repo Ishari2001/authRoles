@@ -55,28 +55,123 @@ body{ background:#0f172a; color:#f1f5f9; }
 
 /* FOOTER */
 .footer { text-align:center; padding:30px; color:#64748b; border-top:1px solid #334155; }
+/* REFERRAL CARD */
+
+.referral-card{
+    background:#1e293b;
+    padding:20px 25px;
+    border-radius:14px;
+    width:420px;
+    margin-right:20px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.4);
+}
+
+.ref-header h3{
+    color:#38bdf8;
+    margin-bottom:4px;
+}
+
+.ref-header p{
+    font-size:13px;
+    color:#94a3b8;
+    margin-bottom:15px;
+}
+
+/* LINK BOX */
+
+.ref-link-box{
+    display:flex;
+    background:#0f172a;
+    border-radius:8px;
+    overflow:hidden;
+}
+
+.ref-link-box input{
+    flex:1;
+    border:none;
+    padding:10px;
+    background:transparent;
+    color:#f1f5f9;
+    font-size:13px;
+}
+
+.ref-link-box input:focus{
+    outline:none;
+}
+
+/* COPY BUTTON */
+
+.copy-btn{
+    background:#6366f1;
+    border:none;
+    padding:10px 18px;
+    color:#fff;
+    font-weight:600;
+    cursor:pointer;
+}
+
+.copy-btn:hover{
+    background:#4f46e5;
+}
+
+/* SHARE BUTTONS */
+
+.share-buttons{
+    margin-top:12px;
+    display:flex;
+    gap:10px;
+}
+
+.share{
+    text-decoration:none;
+    padding:6px 14px;
+    border-radius:6px;
+    font-size:13px;
+    font-weight:600;
+}
+
+.whatsapp{
+    background:#25D366;
+    color:#fff;
+}
+
+.telegram{
+    background:#229ED9;
+    color:#fff;
+}
 </style>
 </head>
 <body>
 
 <!-- NAVBAR -->
 <div class="navbar">
-    <h1>E-Ticket Platform</h1>
-    <div class="ref-box">
-    <h3>Your Referral Link</h3>
-
-    <input type="text" value="<?= $refLink ?>" id="refLink" readonly>
-
-    <button onclick="copyLink()">Copy Link</button>
-</div>
-
-
     
-    <div>
-        <a href="<?= base_url('/dashboard') ?>">Purchase Ticket</a>
-        
-        <a href="<?= base_url('/logout') ?>">Logout</a>
+    <div class="ref-box">
+        <div class="referral-card">
+
+    <div class="ref-header">
+        <h3>Invite Friends & Earn</h3>
+        <p>Share your referral link and earn commission when they buy tickets.</p>
     </div>
+
+    <div class="ref-link-box">
+        <input type="text" value="<?= $refLink ?>" id="refLink" readonly>
+        <button onclick="copyLink()" class="copy-btn">Copy</button>
+    </div>
+
+    <div class="share-buttons">
+        <a target="_blank" 
+           href="https://wa.me/?text=Join this ticket platform <?= urlencode($refLink) ?>" 
+           class="share whatsapp">WhatsApp</a>
+
+        <a target="_blank"
+           href="https://t.me/share/url?url=<?= urlencode($refLink) ?>" 
+           class="share telegram">Telegram</a>
+    </div>
+
+</div>
+    
+</div>
 </div>
 
 <!-- HERO -->

@@ -92,6 +92,17 @@ img{border-radius:6px;width:80px;}
 .btn-edit:hover{background:#d97706;}
 .btn-danger{background:#ef4444;color:#fff;}
 .btn-danger:hover{background:#dc2626;}
+.logout-btn{
+    margin-top:30px;
+    background:#ef4444;
+    color:#fff !important;
+    text-align:center;
+    font-weight:600;
+}
+
+.logout-btn:hover{
+    background:#dc2626;
+}
 
 
 </style>
@@ -105,6 +116,7 @@ img{border-radius:6px;width:80px;}
 <a href="<?= base_url('/admin/dashboard?view=users') ?>">Users</a>
 <a href="<?= base_url('/admin/dashboard?view=commissions') ?>">Commissions</a>
 <a href="<?= base_url('/admin/dashboard?view=tickets') ?>">Tickets</a>
+<a href="<?= base_url('/admin/logout') ?>" class="logout-btn">Logout</a>
 </div>
 
 <!-- MAIN CONTENT -->
