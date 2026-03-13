@@ -17,7 +17,7 @@ class Auth extends BaseController
     {
         
         if ($this->session->get('logged')) {
-            return redirect()->to('/dashboard');
+            return redirect()->to('/home');
         }
 
         return view('auth/login');

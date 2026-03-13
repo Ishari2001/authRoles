@@ -8,12 +8,17 @@
 <style>
 *{ margin:0; padding:0; box-sizing:border-box; font-family:'Inter',sans-serif; }
 body{ background:#0f172a; color:#f1f5f9; }
-
-/* NAVBAR */
-.navbar {
-    display:flex; justify-content:space-between; align-items:center;
-    padding:20px 8%; background:#1e293b;
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    padding:20px 8%;
+    background:#1e293b;
+    flex-wrap:wrap;
+    gap:20px;
 }
+
+
 .navbar h1 { font-size:24px; font-weight:700; color:#38bdf8; }
 .navbar a { color:#f1f5f9; text-decoration:none; margin-left:20px; padding:6px 12px; border-radius:6px; transition:.3s; }
 .navbar a:hover { background:#334155; }
@@ -56,13 +61,12 @@ body{ background:#0f172a; color:#f1f5f9; }
 /* FOOTER */
 .footer { text-align:center; padding:30px; color:#64748b; border-top:1px solid #334155; }
 /* REFERRAL CARD */
-
 .referral-card{
-    background:#1e293b;
-    padding:20px 25px;
+    background:#0f172a;
+    padding:18px;
     border-radius:14px;
-    width:420px;
-    margin-right:20px;
+    max-width:420px;
+    width:100%;
     box-shadow:0 8px 20px rgba(0,0,0,0.4);
 }
 
@@ -139,39 +143,94 @@ body{ background:#0f172a; color:#f1f5f9; }
     background:#229ED9;
     color:#fff;
 }
+/* MOBILE RESPONSIVE */
+
+@media (max-width:768px){
+
+.navbar{
+    flex-direction:column;
+    align-items:stretch;
+    padding:20px;
+}
+
+.hero{
+    padding:40px 20px;
+    margin:15px;
+}
+
+.hero h2{
+    font-size:30px;
+}
+
+.hero p{
+    font-size:16px;
+}
+
+.cards{
+    grid-template-columns:1fr;
+    padding:30px 20px;
+}
+
+.card{
+    padding:20px;
+}
+
+.referral-card{
+    width:100%;
+}
+
+.ref-link-box{
+    flex-direction:column;
+}
+
+.ref-link-box input{
+    width:100%;
+}
+
+.copy-btn{
+    width:100%;
+}
+
+.share-buttons{
+    justify-content:space-between;
+}
+
+.btn{
+    display:block;
+    margin-bottom:10px;
+}
+
+}
 </style>
 </head>
 <body>
 
-<!-- NAVBAR -->
 <div class="navbar">
+
     
-    <div class="ref-box">
-        <div class="referral-card">
 
-    <div class="ref-header">
-        <h3>Invite Friends & Earn</h3>
-        <p>Share your referral link and earn commission when they buy tickets.</p>
+    <div class="referral-card">
+        <div class="ref-header">
+            <h3>Invite & Earn</h3>
+            <p>Share your referral link</p>
+        </div>
+
+        <div class="ref-link-box">
+            <input type="text" value="<?= $refLink ?>" id="refLink" readonly>
+            <button onclick="copyLink()" class="copy-btn">Copy</button>
+        </div>
+
+        <div class="share-buttons">
+            <a target="_blank"
+               href="https://wa.me/?text=Join this ticket platform <?= urlencode($refLink) ?>"
+               class="share whatsapp">WhatsApp</a>
+
+            <a target="_blank"
+               href="https://t.me/share/url?url=<?= urlencode($refLink) ?>"
+               class="share telegram">Telegram</a>
+        </div>
     </div>
 
-    <div class="ref-link-box">
-        <input type="text" value="<?= $refLink ?>" id="refLink" readonly>
-        <button onclick="copyLink()" class="copy-btn">Copy</button>
-    </div>
-
-    <div class="share-buttons">
-        <a target="_blank" 
-           href="https://wa.me/?text=Join this ticket platform <?= urlencode($refLink) ?>" 
-           class="share whatsapp">WhatsApp</a>
-
-        <a target="_blank"
-           href="https://t.me/share/url?url=<?= urlencode($refLink) ?>" 
-           class="share telegram">Telegram</a>
-    </div>
-
-</div>
-    
-</div>
 </div>
 
 <!-- HERO -->
@@ -210,11 +269,19 @@ body{ background:#0f172a; color:#f1f5f9; }
 </div>
 <script>
 function copyLink(){
-    var copyText = document.getElementById("refLink");
-    copyText.select();
-    copyText.setSelectionRange(0, 99999);
-    navigator.clipboard.writeText(copyText.value);
-    alert("Referral Link Copied!");
+    const link = document.getElementById("refLink");
+
+    navigator.clipboard.writeText(link.value);
+
+    const btn = document.querySelector(".copy-btn");
+
+    btn.innerText="Copied!";
+    btn.style.background="#22c55e";
+
+    setTimeout(()=>{
+        btn.innerText="Copy";
+        btn.style.background="#6366f1";
+    },2000);
 }
 </script>
 </body>
