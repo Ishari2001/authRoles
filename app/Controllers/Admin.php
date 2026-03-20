@@ -36,7 +36,7 @@ class Admin extends BaseController
                 'isAdmin'    => true
             ]);
 
-            return redirect()->to('/admin/dashboard');
+            return redirect()->to('admin/dashboard');
         }
 
         return redirect()->back()->with('error', 'Invalid Admin Login');

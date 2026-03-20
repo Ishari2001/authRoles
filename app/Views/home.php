@@ -237,7 +237,7 @@ body{ background:#0f172a; color:#f1f5f9; }
 <div class="hero">
     <h2>Digital Ticketing Experience</h2>
     <p>Buy, track, and manage e-tickets effortlessly. Get automatic rewards and stay updated with wallet balances in real time.</p>
-    <a href="<?= base_url('/dashboard/index') ?>" class="btn btn-primary">Buy Ticket</a>
+    <a href="<?= base_url('dashboard/index') ?>" class="btn btn-primary">Buy Ticket</a>
     <a href="<?= base_url('dashboard/profile') ?>" class="btn btn-outline">View History</a>
 </div>
 

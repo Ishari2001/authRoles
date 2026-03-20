@@ -68,15 +68,16 @@ $routes->group('superadmin', function($routes){
 // =============================
 $routes->group('admin', function($routes){
 
-    $routes->get('dashboard', 'Admin\Dashboard::index');
+    $routes->get('dashboard', 'Admin::dashboard'); // ✅ FIXED
 
-    // Admin only manages tickets
-    $routes->get('tickets', 'Admin\Tickets::index');
-    $routes->get('tickets/add', 'Admin\Tickets::add');
-    $routes->post('tickets/save', 'Admin\Tickets::save');
-    $routes->get('tickets/delete/(:num)', 'Admin\Tickets::delete/$1');
+    // AJAX (for modal edit)
+    $routes->post('ticket/get', 'Admin::getTicket');
+    $routes->post('ticket/update', 'Admin::updateTicketAjax');
+    $routes->post('ticket/delete', 'Admin::deleteTicketAjax');
 
-    // Admin can view purchases
-    $routes->get('purchases', 'Admin\Purchases::index');
+    // Create ticket
+    $routes->post('tickets/save', 'Admin::saveTicket');
 
+    // Logout
+    $routes->get('logout', 'Admin::logout');
 });

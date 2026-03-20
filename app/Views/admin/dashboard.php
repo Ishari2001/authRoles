@@ -104,6 +104,94 @@ img{border-radius:6px;width:80px;}
     background:#dc2626;
 }
 
+.form-card{
+    margin-top:40px;
+    padding:25px;
+    background:#0f172a;
+    border-radius:16px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.4);
+}
+
+.form-title{
+    font-size:20px;
+    font-weight:600;
+    margin-bottom:20px;
+    color:#38bdf8;
+}
+
+.form-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+}
+
+.form-group{
+    display:flex;
+    flex-direction:column;
+}
+
+.form-group.full{
+    grid-column:1 / -1;
+}
+
+.form-group label{
+    margin-bottom:6px;
+    font-size:13px;
+    color:#94a3b8;
+}
+
+.form-group input,
+.form-group textarea{
+    padding:10px 12px;
+    border:none;
+    border-radius:8px;
+    background:#1e293b;
+    color:#fff;
+}
+
+.form-group input:focus,
+.form-group textarea:focus{
+    outline:2px solid #38bdf8;
+}
+
+.btn{
+    padding:10px 18px;
+    border:none;
+    border-radius:8px;
+    font-weight:600;
+    cursor:pointer;
+}
+
+.btn-primary{
+    background:linear-gradient(135deg,#6366f1,#8b5cf6);
+    color:#fff;
+}
+
+.btn-secondary{
+    background:#334155;
+    color:#fff;
+}
+
+.btn-primary:hover{opacity:.9;}
+.btn-secondary:hover{background:#475569;}
+
+/* MODAL */
+.modal{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.6);
+    backdrop-filter:blur(5px);
+}
+
+.modal-box{
+    width:520px;
+    background:#0f172a;
+    margin:80px auto;
+    padding:25px;
+    border-radius:16px;
+    box-shadow:0 20px 50px rgba(0,0,0,0.6);
+}
 
 </style>
 </head>
@@ -258,36 +346,59 @@ img{border-radius:6px;width:80px;}
 </table>
 
     <!-- ADD NEW TICKET FORM -->
-    <div style="margin-top:40px; padding:20px; background:#1e293b; border-radius:12px;">
-        <h2>➕ Add New Ticket</h2>
-        <form method="post" action="<?= base_url('/admin/tickets/save') ?>" enctype="multipart/form-data">
-            <label>Title</label><br>
-            <input type="text" name="title" required><br><br>
+    <div class="form-card">
+    <div class="form-title">➕ Create New Ticket</div>
 
-            <label>Description</label><br>
-            <textarea name="description"></textarea><br><br>
+    <form method="post" action="<?= base_url('/admin/tickets/save') ?>" enctype="multipart/form-data">
 
-            <label>Price</label><br>
-            <input type="number" name="price" step="0.01" required><br><br>
+        <div class="form-grid">
 
-            <label>Quantity Available</label><br>
-            <input type="number" name="qty" required><br><br>
+            <div class="form-group">
+                <label>Title</label>
+                <input type="text" name="title" required>
+            </div>
 
-            <label>Event Date</label><br>
-            <input type="date" name="event_date"><br><br>
+            <div class="form-group">
+                <label>Price</label>
+                <input type="number" name="price" step="0.01" required>
+            </div>
 
-            <label>Ticket Sale Start</label><br>
-            <input type="datetime-local" name="purchase_start" required><br><br>
+            <div class="form-group">
+                <label>Quantity</label>
+                <input type="number" name="qty" required>
+            </div>
 
-            <label>Ticket Sale End</label><br>
-            <input type="datetime-local" name="purchase_end" required><br><br>
+            <div class="form-group">
+                <label>Event Date</label>
+                <input type="date" name="event_date">
+            </div>
 
-            <label>Ticket Image</label><br>
-            <input type="file" name="image"><br><br>
+            <div class="form-group">
+                <label>Sale Start</label>
+                <input type="datetime-local" name="purchase_start" required>
+            </div>
 
-            <button type="submit" class="btn btn-primary">Create Ticket</button>
-        </form>
-    </div>
+            <div class="form-group">
+                <label>Sale End</label>
+                <input type="datetime-local" name="purchase_end" required>
+            </div>
+
+            <div class="form-group full">
+                <label>Description</label>
+                <textarea name="description" rows="3"></textarea>
+            </div>
+
+            <div class="form-group full">
+                <label>Ticket Image</label>
+                <input type="file" name="image">
+            </div>
+
+        </div>
+
+        <br>
+        <button type="submit" class="btn btn-primary">Create Ticket</button>
+    </form>
+</div>
 
 </div>
 <?php endif; ?>
@@ -332,6 +443,7 @@ img{border-radius:6px;width:80px;}
     </form>
   </div>
 </div>
+
 <script>
 function editTicket(id){
     fetch("<?= base_url('/admin/ticket/get') ?>",{
